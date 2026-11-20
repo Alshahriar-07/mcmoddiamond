@@ -3,9 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diamond Rush 1v1 - Minecraft Fabric 1v1 Challenge Mod | V4</title>
+<meta name="description" content="Diamond Rush 1v1 is a Minecraft Fabric mod featuring three competitive diamond challenges. Create arenas, invite friends, and compete in exciting 1v1 matches.">
+<meta name="keywords" content="Diamond Rush 1v1, Minecraft Diamond Rush Mod, Minecraft 1v1 Mod, Minecraft Fabric 26.2 Mod, Minecraft PvP Mod, Minecraft Diamond Challenge, Fabric Multiplayer Mod, Minecraft Minigame Mod, Diamond Rush Minecraft">
+<meta name="author" content="Al Shahriar Sowan">
+<meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0a111d">
-<meta name="description" content="Diamond Rush 1v1: a competitive Minecraft Fabric 26.2 mod. Two players race to mine one diamond. First to three wins.">
-<title>Diamond Rush 1v1: Minecraft Fabric mod</title>
+<link rel="canonical" href="https://diamondrush-mcmod.vercel.app/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Diamond Rush 1v1 - Minecraft Fabric 1v1 Challenge Mod | V4">
+<meta property="og:description" content="Diamond Rush 1v1 is a Minecraft Fabric mod featuring three competitive diamond challenges. Create arenas, invite friends, and compete in exciting 1v1 matches.">
+<meta property="og:url" content="https://diamondrush-mcmod.vercel.app/">
+<meta property="og:site_name" content="Diamond Rush 1v1">
+<meta property="og:image" content="https://raw.githubusercontent.com/Alshahriar-07/diamond-rush-minecraft-mod/main/src/main/resources/assets/diamondrush/textures/gui/diamond_rush_logo.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="128">
+<meta property="og:image:height" content="128">
+<meta property="og:image:alt" content="Diamond Rush 1v1 mod logo">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Diamond Rush 1v1 - Minecraft Fabric 1v1 Challenge Mod | V4">
+<meta name="twitter:description" content="Diamond Rush 1v1 is a Minecraft Fabric mod featuring three competitive diamond challenges. Create arenas, invite friends, and compete in exciting 1v1 matches.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Alshahriar-07/diamond-rush-minecraft-mod/main/src/main/resources/assets/diamondrush/textures/gui/diamond_rush_logo.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://diamondrush-mcmod.vercel.app/#website",
+      "url": "https://diamondrush-mcmod.vercel.app/",
+      "name": "Diamond Rush 1v1",
+      "description": "Diamond Rush 1v1 is a Minecraft Fabric mod featuring three competitive diamond challenges. Create arenas, invite friends, and compete in exciting 1v1 matches.",
+      "publisher": { "@id": "https://diamondrush-mcmod.vercel.app/#organization" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://diamondrush-mcmod.vercel.app/#software",
+      "name": "Diamond Rush 1v1",
+      "softwareVersion": "4.0.0",
+      "applicationCategory": "GameApplication",
+      "applicationSubCategory": "Minecraft Fabric mod",
+      "operatingSystem": "Minecraft Java Edition",
+      "softwareRequirements": "Minecraft 26.2, Fabric Loader 0.19.3+, Fabric API 0.154.0+26.2, Java 25+",
+      "url": "https://diamondrush-mcmod.vercel.app/",
+      "downloadUrl": "https://github.com/Alshahriar-07/diamond-rush-minecraft-mod/releases/download/v4/Diamond-Rush-1v1-v4.jar",
+      "sameAs": [
+        "https://github.com/Alshahriar-07/diamond-rush-minecraft-mod",
+        "https://modrinth.com/mod/diamondrush1v1"
+      ],
+      "author": {
+        "@type": "Person",
+        "name": "Al Shahriar Sowan",
+        "url": "https://alshahriarsayon.vercel.app/"
+      },
+      "publisher": { "@id": "https://diamondrush-mcmod.vercel.app/#organization" },
+      "license": "https://github.com/Alshahriar-07/diamond-rush-minecraft-mod/blob/main/LICENSE"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://diamondrush-mcmod.vercel.app/#organization",
+      "name": "Eagox Studio",
+      "url": "https://eagoxstudio.vercel.app/",
+      "founder": {
+        "@type": "Person",
+        "name": "Al Shahriar Sowan",
+        "url": "https://alshahriarsayon.vercel.app/"
+      }
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -16,118 +87,229 @@
   --photo:url('minecraft-bg.jpg');
   --night:#0a111d; --ink:#e8eef2; --mute:#9aaab6; --dia:#4de8e0; --dia-hi:#bffaf6; --dia-lo:#1fb5b0; --gold:#f2c14e;
   --px:'Press Start 2P',monospace;
+  --obsidian:#070b12;
+  --deepslate:#101722;
+  --deepslate-2:#151f2b;
+  --stone:#2b3540;
+  --stone-hi:#4a5662;
+  --slot:#091019;
+  --slot-hi:#172534;
+  --line:#2d3b49;
+  --emerald:#4fd177;
+  --redstone:#e05a52;
+  --white:#f3f7f9;
+  --shadow:0 8px 0 rgba(0,0,0,.55);
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{background:var(--night);color:var(--ink);font:17px/1.6 'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-:focus-visible{outline:3px solid var(--dia);outline-offset:3px}
-code{font-family:ui-monospace,Consolas,monospace;font-size:.92em}
 
-/* background stack */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{background:var(--night);color:var(--ink);font:17px/1.65 'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
+body.nav-open{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+img{max-width:100%}
+:focus-visible{outline:3px solid var(--dia);outline-offset:4px}
+code{font-family:ui-monospace,Consolas,monospace;font-size:.92em}
+::selection{background:var(--dia);color:#04161a}
+
+/* PRESERVED BACKGROUND STACK — visual implementation intentionally unchanged. */
 #world{position:fixed;left:-20px;top:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;image-rendering:pixelated;z-index:-3;transition:transform .2s ease-out}
 .photo{position:fixed;inset:0;z-index:-2;background:var(--photo) center/cover no-repeat}
 .veil{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,10,15,.5),rgba(6,10,15,.82) 60%,rgba(6,10,15,.92))}
 
-.wrap{width:min(1080px,90%);margin:auto}
-.blk{background:rgba(10,16,22,.74);border:2px solid #000;box-shadow:inset 2px 2px 0 rgba(255,255,255,.08),inset -2px -2px 0 rgba(0,0,0,.4);backdrop-filter:blur(6px)}
+.wrap{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+.pixel-panel{
+  position:relative;
+  background:
+    repeating-linear-gradient(0deg,rgba(255,255,255,.024) 0 1px,transparent 1px 4px),
+    linear-gradient(145deg,rgba(21,31,43,.97),rgba(8,14,21,.97));
+  border:3px solid #030507;
+  box-shadow:
+    0 0 0 2px #2a3744,
+    inset 2px 2px 0 rgba(255,255,255,.09),
+    inset -2px -2px 0 rgba(0,0,0,.6),
+    var(--shadow);
+}
+.pixel-panel::before,.pixel-panel::after{
+  content:"";position:absolute;width:5px;height:5px;background:var(--stone-hi);z-index:2;
+  box-shadow:0 0 0 1px #000;
+}
+.pixel-panel::before{left:7px;top:7px}
+.pixel-panel::after{right:7px;top:7px}
 
-/* buttons: Minecraft-style bevels */
-.btn{display:inline-block;font:12px/1 var(--px);padding:15px 18px;border:2px solid #000;color:#fff;cursor:pointer;background:#5b5b5b;box-shadow:inset 3px 3px 0 #8d8d8d,inset -3px -3px 0 #3a3a3a,0 4px 0 #000;transition:background .15s}
-.btn:hover{background:#6b76a3}
-.btn:active{transform:translateY(3px);box-shadow:inset 3px 3px 0 #8d8d8d,inset -3px -3px 0 #3a3a3a,0 1px 0 #000}
-.btn.go{background:var(--dia);color:#04161a;box-shadow:inset 3px 3px 0 var(--dia-hi),inset -3px -3px 0 var(--dia-lo),0 4px 0 #000}
-.btn.go:hover{background:var(--dia-hi)}
-.btn.go:active{box-shadow:inset 3px 3px 0 var(--dia-hi),inset -3px -3px 0 var(--dia-lo),0 1px 0 #000}
+/* ---------- pixel controls ---------- */
+.pixel-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:52px;padding:16px 20px;border:3px solid #030507;
+  font:10px/1.45 var(--px);letter-spacing:.02em;text-align:center;text-transform:uppercase;
+  color:#fff;background:#5d6772;cursor:pointer;
+  box-shadow:inset 3px 3px 0 #8e98a2,inset -3px -3px 0 #343d46,0 5px 0 #000;
+  transition:transform .14s steps(2,end),background .14s,box-shadow .14s;
+}
+.pixel-btn:hover{background:#6b7785;transform:translateY(-2px);box-shadow:inset 3px 3px 0 #a2acb5,inset -3px -3px 0 #343d46,0 7px 0 #000}
+.pixel-btn:active{transform:translateY(4px);box-shadow:inset 3px 3px 0 #8e98a2,inset -3px -3px 0 #343d46,0 1px 0 #000}
+.pixel-btn--diamond{background:var(--dia);color:#031417;box-shadow:inset 3px 3px 0 var(--dia-hi),inset -3px -3px 0 var(--dia-lo),0 5px 0 #000}
+.pixel-btn--diamond:hover{background:#7af2eb;box-shadow:inset 3px 3px 0 #ddfffd,inset -3px -3px 0 var(--dia-lo),0 7px 0 #000}
+.pixel-btn--emerald{background:#23894b;color:#f2fff6;box-shadow:inset 3px 3px 0 #50d982,inset -3px -3px 0 #0f5a2a,0 5px 0 #000}
+.pixel-btn--emerald:hover{background:#2b9f58;box-shadow:inset 3px 3px 0 #6de99c,inset -3px -3px 0 #0f5a2a,0 7px 0 #000}
+.pixel-btn--gold{background:var(--gold);color:#1c1302;box-shadow:inset 3px 3px 0 #ffe18a,inset -3px -3px 0 #9e7316,0 5px 0 #000}
+.pixel-btn--gold:hover{background:#ffd66b;box-shadow:inset 3px 3px 0 #fff0b8,inset -3px -3px 0 #9e7316,0 7px 0 #000}
+.pixel-btn img{width:18px;height:18px;image-rendering:pixelated;flex:none}
+.pixel-btn--small{min-height:44px;padding:12px 14px;font-size:8px}
+.btn-icon{width:19px;height:19px;display:inline-grid;place-items:center;flex:none}
+.btn-icon svg{width:19px;height:19px;display:block;fill:currentColor}
 
-/* nav */
-nav{position:sticky;top:0;z-index:50;background:rgba(8,12,18,.8);backdrop-filter:blur(10px);border-bottom:2px solid #000}
-.nav{display:flex;align-items:center;justify-content:space-between;height:70px}
-.brand{display:flex;align-items:center;gap:12px;font:13px var(--px)}
-.gem{width:20px;height:20px;background:var(--dia);box-shadow:inset 4px 4px 0 var(--dia-hi),inset -4px -4px 0 var(--dia-lo),0 0 0 2px #000}
-.links{display:flex;gap:28px;color:var(--mute);font-weight:500;font-size:16px}
-.links a:hover{color:var(--dia)}
-nav .btn{padding:12px 14px;font-size:10px}
+.pixel-tag{
+  display:inline-flex;align-items:center;gap:8px;padding:7px 10px;
+  border:2px solid #000;background:#081019;color:var(--mute);
+  font:7px/1.5 var(--px);letter-spacing:.03em;text-transform:uppercase;
+  box-shadow:inset 2px 2px 0 rgba(255,255,255,.06);
+}
+.pixel-tag--live{color:var(--dia);border-color:#173a40;background:#06171a}
+.pixel-tag--gold{color:var(--gold);border-color:#4a3b16;background:#171207}
+.dot{width:8px;height:8px;background:var(--emerald);box-shadow:0 0 0 2px #06210f;flex:none}
+.dot--cyan{background:var(--dia);box-shadow:0 0 0 2px #05282b}
 
-/* hero */
-.hero{display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:center;min-height:calc(100vh - 70px);padding:60px 0}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
-.chip-t{font-weight:700;font-size:14px;padding:5px 10px;background:#000;border:2px solid #2d3b47;color:var(--dia)}
-h1{font:clamp(26px,4.8vw,54px)/1.3 var(--px);text-shadow:4px 4px 0 #000}
-.lead{margin:26px 0 34px;max-width:30em;font-size:20px;color:#c6d3dc}
-.row{display:flex;flex-wrap:wrap;gap:16px}
+/* ---------- navigation ---------- */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(7,11,18,.97);
+  border-bottom:4px solid #020405;
+  box-shadow:0 5px 0 rgba(0,0,0,.4);
+}
+.site-header::after{
+  content:"";display:block;height:4px;
+  background:repeating-linear-gradient(90deg,var(--dia) 0 18px,#132a31 18px 36px);
+  opacity:.65;
+}
+.nav-shell{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:82px;position:relative}
+.brand{display:flex;align-items:center;gap:12px;flex:none}
+.brand img{width:46px;height:46px;image-rendering:pixelated;border:2px solid #000;box-shadow:inset 0 0 0 2px #283541}
+.brand-copy{display:flex;flex-direction:column;gap:3px}
+.brand-name{font:11px/1.5 var(--px);letter-spacing:-.02em;color:var(--white);text-shadow:2px 2px 0 #000}
+.brand-sub{font:7px/1.4 var(--px);letter-spacing:.06em;color:var(--dia)}
+.nav-menu{display:flex;align-items:center;gap:2px}
+.nav-link{
+  position:relative;display:inline-flex;align-items:center;gap:7px;
+  padding:16px 9px;font:7px/1.4 var(--px);text-transform:uppercase;color:#b3c1cb;
+  transition:color .14s;
+}
+.nav-link:hover,.nav-link:focus-visible,.nav-link.is-active{color:var(--white)}
+.nav-link.is-active::after{
+  content:"";position:absolute;left:7px;right:7px;bottom:7px;height:4px;
+  background:var(--dia);box-shadow:0 2px 0 #000;
+}
+.nav-link svg{width:15px;height:15px;fill:currentColor;flex:none}
+.nav-link--icon{padding-inline:9px}
+.nav-toggle{
+  display:none;width:48px;height:44px;border:3px solid #000;background:#1b2834;cursor:pointer;
+  box-shadow:inset 2px 2px 0 #405164,inset -2px -2px 0 #070b10,0 3px 0 #000;
+  align-items:center;justify-content:center;flex-direction:column;gap:5px;
+}
+.nav-toggle span{display:block;width:22px;height:4px;background:var(--dia);box-shadow:0 0 0 1px #000;transition:transform .15s,opacity .15s}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
 
-/* mineable ore */
-.mine{display:flex;flex-direction:column;align-items:center;gap:20px}
+/* ---------- hero ---------- */
+.hero{
+  display:grid;grid-template-columns:minmax(0,1.06fr) minmax(380px,.94fr);
+  gap:clamp(36px,5vw,72px);align-items:center;
+  min-height:calc(100vh - 90px);padding:70px 0 84px;
+}
+.eyebrow{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.eyebrow__line{width:34px;height:4px;background:var(--dia);box-shadow:0 0 0 2px #000}
+.hero h1{
+  font:clamp(33px,5.7vw,67px)/1.25 var(--px);
+  text-shadow:5px 5px 0 #000;letter-spacing:-.045em;margin-bottom:26px;
+}
+.hero h1 span{display:block}
+.hero h1 .hero-title-accent{color:var(--dia);text-shadow:5px 5px 0 #000,9px 9px 0 rgba(0,0,0,.32);margin-top:8px}
+.hero h1 .hero-title-accent small{font-size:.42em;color:var(--gold);vertical-align:middle;margin-left:8px;letter-spacing:0}
+.hero-lead{max-width:620px;font-size:clamp(17px,1.5vw,20px);line-height:1.75;color:#d1dce4}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-note{display:flex;align-items:center;gap:9px;margin-top:20px;color:#aebbc5;font-size:14px}
+.hero-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:32px;max-width:650px}
+.meta-slot{
+  min-height:70px;padding:12px 11px;border:2px solid #000;
+  background:rgba(8,15,23,.88);
+  box-shadow:inset 2px 2px 0 rgba(255,255,255,.06),inset -2px -2px 0 rgba(0,0,0,.5);
+}
+.meta-slot small{display:block;font:6px/1.5 var(--px);color:#8395a3;text-transform:uppercase;margin-bottom:7px}
+.meta-slot strong{display:block;font:8px/1.5 var(--px);color:var(--ink);text-transform:uppercase}
+.meta-slot strong.cyan{color:var(--dia)}
+.meta-slot strong.gold{color:var(--gold)}
+
+.hero-stage{position:relative;isolation:isolate;padding:18px 0 18px 16px}
+.block-deco{
+  position:absolute;z-index:-1;width:78px;height:78px;border:4px solid #000;
+  background:linear-gradient(135deg,#315c60 0 24%,#1c3f43 24% 48%,#4de8e0 48% 52%,#163236 52% 100%);
+  box-shadow:inset 5px 5px 0 rgba(255,255,255,.13),inset -5px -5px 0 rgba(0,0,0,.42),8px 8px 0 rgba(0,0,0,.35);
+  image-rendering:pixelated;
+}
+.block-deco--one{right:-8px;top:-22px;transform:rotate(4deg)}
+.block-deco--two{left:-22px;bottom:8px;width:54px;height:54px;background:linear-gradient(135deg,#6c5523,#a7802b 35%,#3b2e12 36% 100%);transform:rotate(-5deg)}
+.hero-console{padding:12px;background:rgba(8,14,21,.94)}
+.console-top{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  border:2px solid #000;background:#0b141e;padding:10px 12px;margin-bottom:10px;
+  font:6px/1.5 var(--px);color:#aab8c3;letter-spacing:.03em;
+}
+.console-top span{display:flex;align-items:center;gap:7px}
+.console-dots{display:flex;gap:4px}
+.console-dots i{display:block;width:7px;height:7px;background:#324454;box-shadow:0 0 0 1px #000}
+.console-dots i:nth-child(1){background:var(--redstone)}
+.console-dots i:nth-child(2){background:var(--gold)}
+.console-dots i:nth-child(3){background:var(--emerald)}
+.ore-zone{display:grid;grid-template-columns:minmax(0,1fr) minmax(126px,.62fr);gap:10px;align-items:stretch}
+.ore-stage{
+  position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  min-height:296px;padding:20px;border:2px solid #000;background:
+    repeating-linear-gradient(45deg,rgba(255,255,255,.025) 0 8px,transparent 8px 16px),
+    #09121a;
+  box-shadow:inset 4px 4px 0 rgba(255,255,255,.04),inset -4px -4px 0 rgba(0,0,0,.48);
+}
 .ore-wrap{position:relative}
-#oreBtn{display:block;width:min(230px,52vw);aspect-ratio:1;background:none;border:4px solid #000;cursor:pointer;padding:0;box-shadow:8px 8px 0 rgba(0,0,0,.5)}
+#oreBtn{
+  display:block;width:min(238px,46vw);aspect-ratio:1;padding:0;cursor:pointer;
+  border:6px solid #030507;background:#111;box-shadow:
+    0 0 0 2px #4b5a65,inset 0 0 0 2px #000,
+    10px 10px 0 rgba(0,0,0,.38);
+  transition:filter .15s,transform .15s;
+}
+#oreBtn:hover{filter:brightness(1.16);transform:translateY(-2px)}
+#oreBtn:active{transform:translateY(2px)}
 #oreBtn.shake{animation:shake .18s}
 @keyframes shake{25%{transform:translate(-4px,2px)}75%{transform:translate(4px,-2px)}}
 #ore{width:100%;height:100%;image-rendering:pixelated;display:block}
 .chip{position:absolute;left:50%;top:50%;width:12px;height:12px;border:2px solid #000;animation:fly .8s cubic-bezier(.3,.6,.5,1) forwards;pointer-events:none}
 @keyframes fly{to{transform:translate(var(--dx),var(--dy));opacity:0}}
-.score{font:11px/1.8 var(--px);text-align:center}
-.score small{display:block;font:14px 'DM Sans';color:var(--mute);margin-top:4px}
-
-/* sections */
-section{padding:90px 0}
-.head{margin-bottom:34px;max-width:36em}
-h2{font:clamp(17px,2.6vw,25px)/1.5 var(--px);text-shadow:3px 3px 0 #000}
-.head p{color:var(--mute);margin-top:12px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{padding:24px}
-.card h3{font:11px/1.7 var(--px);display:flex;gap:10px;align-items:center;margin-bottom:10px}
-.card h3::before{content:"";flex:none;width:12px;height:12px;background:var(--dia);box-shadow:inset 3px 3px 0 var(--dia-hi),inset -3px -3px 0 var(--dia-lo),0 0 0 2px #000}
-.card p{color:var(--mute);font-size:16px}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;list-style:none}
-.steps li{padding:22px}
-.steps b{display:block;font:20px var(--px);color:var(--dia);margin-bottom:16px;text-shadow:3px 3px 0 #000}
-.steps h3{font:11px/1.6 var(--px);margin-bottom:8px}
-.steps p{color:var(--mute);font-size:16px}
-
-/* install */
-.box{padding:28px;max-width:820px}
-.tabs{display:flex;gap:10px;margin-bottom:24px}
-.tab{font:11px var(--px);padding:12px 16px;color:var(--mute);background:#1a242d;border:2px solid #000;cursor:pointer}
-.tab[aria-selected=true]{color:#04161a;background:var(--dia)}
-.req{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px}
-.req div{padding:12px;background:rgba(0,0,0,.35);border:2px solid #000}
-.req small{display:block;color:var(--mute);font-size:13px}
-.req strong{font-size:15px}
-ol.list{padding-left:22px;color:#c6d3dc;line-height:1.95}
-ol.list li::marker{color:var(--dia);font-weight:700}
-.note{margin-top:24px;padding:14px 16px;border-left:4px solid var(--gold);background:rgba(242,193,78,.07);color:#e3d6aa;font-size:16px}
-
-/* commands */
-.cmds{max-width:820px}
-.cmds h3{font:11px var(--px);color:var(--dia);margin:30px 0 12px}
-.cmds h3:first-child{margin-top:0}
-.cmd{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:12px 16px;margin-bottom:8px;font:inherit;color:inherit;cursor:pointer;background:rgba(10,16,22,.74);border:2px solid #000;box-shadow:inset 2px 2px 0 rgba(255,255,255,.06)}
-.cmd:hover{border-color:var(--dia)}
-.cmd code{color:var(--dia);flex:1;overflow-wrap:anywhere}
-.cmd span{color:var(--mute);font-size:15px;text-align:right}
-.cmd em{font:normal 9px var(--px);color:#04161a;background:var(--dia);padding:6px 8px;opacity:0;transition:opacity .15s}
-.cmd:hover em,.cmd:focus-visible em{opacity:1}
-
-/* download */
-.final{padding:56px 32px;text-align:center}
-.final p{color:var(--mute);margin:14px 0 30px}
-.final .row{justify-content:center}
-footer{border-top:2px solid #000;background:rgba(6,10,15,.85);padding:26px 0;color:var(--mute);font-size:15px}
-.foot{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
-.foot a:hover{color:var(--dia)}
-#toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,90px);background:var(--dia);color:#04161a;font:10px var(--px);padding:14px 16px;border:2px solid #000;box-shadow:0 4px 0 #000;transition:transform .25s;z-index:99}
-#toast.on{transform:translate(-50%,0)}
-
-@media(max-width:860px){
-  .hero{grid-template-columns:1fr;min-height:0;padding:50px 0}
-  .grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.req{grid-template-columns:repeat(2,1fr)}
+.ore-label{font:6px/1.5 var(--px);color:#8ca0ae;text-transform:uppercase;letter-spacing:.08em;text-align:center}
+.ore-label strong{color:var(--dia);display:block;margin-top:5px}
+.console-side{display:flex;flex-direction:column;gap:10px}
+.mini-panel{
+  flex:1;padding:13px 11px;border:2px solid #000;background:#0b151e;
+  box-shadow:inset 2px 2px 0 rgba(255,255,255,.05),inset -2px -2px 0 rgba(0,0,0,.55);
 }
-@media(max-width:600px){
-  .links{display:none}.grid,.steps{grid-template-columns:1fr}
-  section{padding:64px 0}.cmd{flex-wrap:wrap}.cmd span{text-align:left;width:100%}.cmd em{display:none}
+.mini-panel small{display:block;font:6px/1.5 var(--px);color:#7d909e;text-transform:uppercase;margin-bottom:10px}
+.score-value{font:20px/1.2 var(--px);color:var(--white);text-shadow:3px 3px 0 #000}
+.score-value span{color:var(--dia)}
+.score-sub{font-size:11px;line-height:1.5;color:#8fa1ae;margin-top:8px}
+.match-line{display:flex;align-items:center;justify-content:space-between;gap:6px;font:6px/1.5 var(--px);color:#a8b7c1;margin-top:8px}
+.match-line b{color:var(--gold);font-weight:400}
+.hotbar{display:grid;grid-template-columns:repeat(9,1fr);gap:4px;margin-top:10px;padding:5px;border:2px solid #000;background:#080e15}
+.hotbar-slot{
+  aspect-ratio:1;border:2px solid #000;background:#141f2a;
+  box-shadow:inset 2px 2px 0 rgba(255,255,255,.06),inset -2px -2px 0 rgba(0,0,0,.5);
+  display:grid;place-items:center;min-width:0;
 }
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+.hotbar-slot img{width:74%;height:74%;object-fit:contain;image-rendering:pixelated}
+.hotbar-slot.is-selected{outline:3px solid var(--dia);outline-offset:-5px;background:#1b3039}
+.hero-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px;color:#8296a4;font-size:11px}
+.hero-footer code{color:var(--dia);font-size:11px}
+.hero-footer span{display:flex;align-items:center;gap:6px}
+
+/*__MORE_CSS__*/
 </style>
 </head>
 <body>
@@ -135,183 +317,9 @@ footer{border-top:2px solid #000;background:rgba(6,10,15,.85);padding:26px 0;col
 <div class="photo" aria-hidden="true"></div>
 <div class="veil" aria-hidden="true"></div>
 
-<nav>
-  <div class="wrap nav">
-    <a class="brand" href="#top"><span class="gem"></span>Diamond Rush</a>
-    <div class="links"><a href="#features">Features</a><a href="#how">How it works</a><a href="#install">Install</a><a href="#commands">Commands</a></div>
-    <a class="btn go" data-dl href="#">Download</a>
-  </div>
-</nav>
+<!--__BODY__-->
 
-<main id="top">
-<header class="wrap hero">
-  <div>
-    <div class="chips"><span class="chip-t">Fabric</span><span class="chip-t">Minecraft 26.2</span><span class="chip-t">1v1 multiplayer</span></div>
-    <h1>Diamond Rush 1v1</h1>
-    <p class="lead">Two players, one diamond. The first to mine it takes the round, and the first to win three takes the match.</p>
-    <div class="row">
-      <a class="btn go" data-dl href="#">Download mod</a>
-      <a class="btn" data-gh href="#" target="_blank" rel="noopener">Source code</a>
-    </div>
-  </div>
-  <div class="mine">
-    <div class="ore-wrap" id="oreWrap">
-      <button id="oreBtn" aria-label="Mine the diamond ore"><canvas id="ore" width="16" height="16"></canvas></button>
-    </div>
-    <div class="score" aria-live="polite">Diamonds mined: <span id="count">0</span><small id="hint">Click the block to mine it</small></div>
-  </div>
-</header>
-
-<section id="features"><div class="wrap">
-  <div class="head"><h2>Built for a fast duel</h2><p>Everything a server needs to run short, fair 1v1 matches.</p></div>
-  <div class="grid">
-    <div class="blk card"><h3>Matchmaking</h3><p>Join the queue and get paired with another player automatically.</p></div>
-    <div class="blk card"><h3>Diamond race</h3><p>Dig down. The first player to break a diamond ore wins the round.</p></div>
-    <div class="blk card"><h3>Best of five</h3><p>Win three rounds to be crowned tournament champion.</p></div>
-    <div class="blk card"><h3>Custom arenas</h3><p>Set up as many arenas as you like, each with its own player spawns.</p></div>
-    <div class="blk card"><h3>Clean resets</h3><p>Inventory, armor, XP and effects are wiped between rounds.</p></div>
-    <div class="blk card"><h3>Saved stats</h3><p>Player stats, wins and tournament records survive server restarts.</p></div>
-  </div>
-</div></section>
-
-<section id="how"><div class="wrap">
-  <div class="head"><h2>How a match plays out</h2></div>
-  <ol class="steps">
-    <li class="blk"><b>1</b><h3>Join the queue</h3><p>Two players run the join command and get paired.</p></li>
-    <li class="blk"><b>2</b><h3>Get ready</h3><p>Both players enter the arena and confirm they’re ready.</p></li>
-    <li class="blk"><b>3</b><h3>Mine first</h3><p>Break a diamond ore before your opponent does.</p></li>
-    <li class="blk"><b>4</b><h3>Take the title</h3><p>Win three rounds to claim the tournament.</p></li>
-  </ol>
-</div></section>
-
-<section id="install"><div class="wrap">
-  <div class="head"><h2>Install</h2><p>Set it up on the server and on both players’ clients.</p></div>
-  <div class="blk box">
-    <div class="req">
-      <div><small>Minecraft</small><strong>Java Edition 26.2</strong></div>
-      <div><small>Fabric Loader</small><strong>0.20.1</strong></div>
-      <div><small>Fabric API</small><strong>0.161.0+26.2</strong></div>
-      <div><small>Java</small><strong>25</strong></div>
-    </div>
-    <div class="tabs" role="tablist">
-      <button class="tab" role="tab" aria-selected="true" data-t="srv">Server</button>
-      <button class="tab" role="tab" aria-selected="false" data-t="cli">Player</button>
-    </div>
-    <ol class="list" id="srv">
-      <li>Install Fabric Loader for Minecraft 26.2 on your server.</li>
-      <li>Download Fabric API and the Diamond Rush JAR.</li>
-      <li>Put both JAR files in the server’s <code>mods</code> folder.</li>
-      <li>Start the server and set up your arenas.</li>
-    </ol>
-    <ol class="list" id="cli" hidden>
-      <li>Install Fabric Loader 26.2 on your Minecraft client.</li>
-      <li>Put Fabric API and the Diamond Rush JAR in your client’s <code>mods</code> folder.</li>
-      <li>Launch the Fabric 26.2 profile.</li>
-      <li>Join the server and start competing.</li>
-    </ol>
-    <p class="note">Both players need the mod on their clients to see the match screen and Ready buttons. The same JAR works on client and server.</p>
-  </div>
-</div></section>
-
-<section id="commands"><div class="wrap">
-  <div class="head"><h2>Commands</h2><p>Click any command to copy it.</p></div>
-  <div class="cmds" id="cmds"></div>
-</div></section>
-
-<section><div class="wrap">
-  <div class="blk final">
-    <h2>Ready to rush?</h2>
-    <p>Download Diamond Rush 1v1 and challenge a friend.</p>
-    <div class="row"><a class="btn go" data-dl href="#">Download .jar</a><a class="btn" data-gh href="#" target="_blank" rel="noopener">View on GitHub</a></div>
-  </div>
-</div></section>
-</main>
-
-<footer><div class="wrap foot">
-  <span>Diamond Rush 1v1 for Minecraft 26.2 on Fabric</span>
-  <span><a data-gh href="#" target="_blank" rel="noopener">GitHub</a> &nbsp; <a href="#install">Install</a></span>
-  <span>© 2026 Diamond Rush 1v1</span>
-</div></footer>
-<div id="toast" role="status"></div>
-
-<script>
-const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-const REPO='https://github.com/Alshahriar-07/minecraft-Mod---Diamond-Rush-1v1---server-edition-.-FABRIC-26.2';
-$$('[data-dl]').forEach(a=>a.href=REPO+'/releases/download/v1/diamond-rush-fabric-26.2.jar');
-$$('[data-gh]').forEach(a=>a.href=REPO);
-const rng=a=>()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296};
-
-/* pixel-art Minecraft world (fallback when no photo is supplied) */
-(function(){
-  const c=$('#world'),x=c.getContext('2d'),W=c.width=256,H=c.height=144,r=rng(11);
-  ['#0a111d','#0d1a2b','#112238','#162d46','#1c3a57'].forEach((k,i)=>{x.fillStyle=k;x.fillRect(0,i*29,W,29)});
-  for(let i=0;i<80;i++){x.fillStyle=r()>.85?'#fff':'#6f87a0';x.fillRect(r()*W|0,r()*60|0,1,1)}
-  x.fillStyle='#e6eef5';x.fillRect(206,16,10,10);x.fillStyle='#c5d3df';x.fillRect(209,19,4,4);
-  let h=88;
-  for(let cx=0;cx<W;cx+=4){
-    h=Math.max(76,Math.min(100,h+[-4,0,0,4][r()*4|0]));
-    for(let y=h;y<H;y+=4){
-      const d=(y-h)/4,o=r();let k;
-      if(d==0)k=o>.5?'#4f9a3a':'#58a843';
-      else if(d<3)k=o>.5?'#6b4a2f':'#775236';
-      else{k=['#6e6e6e','#777','#656565','#7d7d7d'][r()*4|0];if(d>6&&o<.025)k='#4de8e0';else if(o<.09)k='#2d2d2d'}
-      x.fillStyle=k;x.fillRect(cx,y,4,4);
-      x.fillStyle='rgba(0,0,0,.2)';x.fillRect(cx,y,4,1);x.fillRect(cx,y,1,4);
-    }
-  }
-  if(!matchMedia('(prefers-reduced-motion:reduce)').matches)
-    addEventListener('mousemove',e=>{c.style.transform=`translate(${(e.clientX/innerWidth-.5)*-14}px,${(e.clientY/innerHeight-.5)*-8}px)`});
-})();
-
-/* mineable diamond ore */
-const oc=$('#ore'),ox=oc.getContext('2d');let hits=0,mined=0,busy=false;
-const crack=[[8,0],[8,1],[7,2],[7,3],[8,4],[9,5],[9,6],[8,7],[7,8],[7,9],[6,10],[6,11],[5,12],[5,13],[4,14],[4,15],[9,7],[10,8],[11,8],[12,9],[13,9],[14,10],[8,5],[7,6],[6,6],[5,7],[4,7],[3,8],[2,8],[1,9],[10,3],[11,4]];
-function drawOre(){
-  const r=rng(5);
-  for(let y=0;y<16;y++)for(let x=0;x<16;x++){ox.fillStyle=['#6e6e6e','#7a7a7a','#656565','#838383'][r()*4|0];ox.fillRect(x,y,1,1)}
-  [[3,3],[10,2],[6,9],[11,10],[2,10]].forEach(([x,y])=>{
-    ox.fillStyle='#4de8e0';ox.fillRect(x,y,2,2);ox.fillStyle='#bffaf6';ox.fillRect(x,y,1,1);ox.fillStyle='#1fb5b0';ox.fillRect(x+1,y+1,1,1);
-  });
-  ox.fillStyle='rgba(0,0,0,.7)';crack.slice(0,hits*6).forEach(([x,y])=>ox.fillRect(x,y,1,1));
-}
-drawOre();
-$('#oreBtn').addEventListener('click',()=>{
-  if(busy)return;
-  const b=$('#oreBtn');b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');
-  hits++;
-  if(hits<5){drawOre();return}
-  busy=true;ox.clearRect(0,0,16,16);
-  for(let i=0;i<14;i++){
-    const p=document.createElement('i');p.className='chip';
-    p.style.setProperty('--dx',(Math.random()-.5)*300+'px');p.style.setProperty('--dy',(Math.random()*160-70)+'px');
-    p.style.background=i%3?'#4de8e0':'#7a7a7a';$('#oreWrap').append(p);setTimeout(()=>p.remove(),800);
-  }
-  $('#count').textContent=++mined;
-  $('#hint').textContent=mined>2?'You’d win this round.':'Five hits per diamond';
-  setTimeout(()=>{hits=0;drawOre();busy=false},450);
-});
-
-/* commands */
-const esc=s=>s.replace(/</g,'&lt;');
-const groups=[
- ['Play',[['/diamondrush join','Join the matchmaking queue'],['/diamondrush leave','Leave the queue or forfeit'],['/diamondrush menu','Open the match screen'],['/diamondrush stats <player>','View a player’s stats']]],
- ['Arenas',[['/diamondrush arena create <name>','Create an arena'],['/diamondrush arena setspawn <name> player1','Set the player one spawn'],['/diamondrush arena setspawn <name> player2','Set the player two spawn'],['/diamondrush arena list','List configured arenas']]],
- ['Match control',[['/diamondrush start','Start the next queued match'],['/diamondrush stop','Stop tournaments and clear the queue']]]
-];
-$('#cmds').innerHTML=groups.map(([t,l])=>`<h3>${t}</h3>`+l.map(([c,d])=>`<button class="cmd" data-c="${esc(c)}"><code>${esc(c)}</code><span>${d}</span><em>Copy</em></button>`).join('')).join('');
-let tt;
-function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),1600)}
-$('#cmds').addEventListener('click',async e=>{
-  const b=e.target.closest('.cmd');if(!b)return;const t=b.dataset.c.replace(/&lt;/g,'<');
-  try{await navigator.clipboard.writeText(t)}catch(_){const a=document.createElement('textarea');a.value=t;document.body.append(a);a.select();try{document.execCommand('copy')}catch(_){}a.remove()}
-  toast('Copied')
-});
-
-/* install tabs */
-$$('.tab').forEach(b=>b.addEventListener('click',()=>{
-  $$('.tab').forEach(o=>o.setAttribute('aria-selected',o===b));
-  $('#srv').hidden=b.dataset.t!=='srv';$('#cli').hidden=b.dataset.t!=='cli';
-}));
-</script>
+<div id="toast" role="status" aria-live="polite"></div>
+<!--__SCRIPT__-->
 </body>
 </html>
