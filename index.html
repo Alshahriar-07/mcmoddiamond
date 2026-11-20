@@ -3,9 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diamond Rush 1v1 - Minecraft Fabric 1v1 Challenge Mod | V4</title>
+<meta name="description" content="Diamond Rush 1v1 is a Minecraft Fabric mod featuring three competitive diamond challenges. Create arenas, invite friends, and compete in exciting 1v1 matches.">
+<meta name="keywords" content="Diamond Rush 1v1, Minecraft Diamond Rush Mod, Minecraft 1v1 Mod, Minecraft Fabric 26.2 Mod, Minecraft PvP Mod, Minecraft Diamond Challenge, Fabric Multiplayer Mod, Minecraft Minigame Mod, Diamond Rush Minecraft">
+<meta name="author" content="Al Shahriar Sowan">
+<meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0a111d">
-<meta name="description" content="Diamond Rush 1v1 V4: a competitive Minecraft Fabric 26.2 mod. Two players compete through three diamond-themed rounds in a server-authoritative best-of-three match.">
-<title>Diamond Rush 1v1 V4: Minecraft Fabric mod</title>
+<link rel="canonical" href="https://diamondrush-mcmod.vercel.app/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Diamond Rush 1v1 - Minecraft Fabric 1v1 Challenge Mod | V4">
+<meta property="og:description" content="Diamond Rush 1v1 is a Minecraft Fabric mod featuring three competitive diamond challenges. Create arenas, invite friends, and compete in exciting 1v1 matches.">
+<meta property="og:url" content="https://diamondrush-mcmod.vercel.app/">
+<meta property="og:site_name" content="Diamond Rush 1v1">
+<meta property="og:image" content="https://raw.githubusercontent.com/Alshahriar-07/diamond-rush-minecraft-mod/main/src/main/resources/assets/diamondrush/textures/gui/diamond_rush_logo.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="128">
+<meta property="og:image:height" content="128">
+<meta property="og:image:alt" content="Diamond Rush 1v1 mod logo">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Diamond Rush 1v1 - Minecraft Fabric 1v1 Challenge Mod | V4">
+<meta name="twitter:description" content="Diamond Rush 1v1 is a Minecraft Fabric mod featuring three competitive diamond challenges. Create arenas, invite friends, and compete in exciting 1v1 matches.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Alshahriar-07/diamond-rush-minecraft-mod/main/src/main/resources/assets/diamondrush/textures/gui/diamond_rush_logo.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://diamondrush-mcmod.vercel.app/#website",
+      "url": "https://diamondrush-mcmod.vercel.app/",
+      "name": "Diamond Rush 1v1",
+      "description": "Diamond Rush 1v1 is a Minecraft Fabric mod featuring three competitive diamond challenges. Create arenas, invite friends, and compete in exciting 1v1 matches.",
+      "publisher": { "@id": "https://diamondrush-mcmod.vercel.app/#organization" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://diamondrush-mcmod.vercel.app/#software",
+      "name": "Diamond Rush 1v1",
+      "softwareVersion": "4.0.0",
+      "applicationCategory": "GameApplication",
+      "applicationSubCategory": "Minecraft Fabric mod",
+      "operatingSystem": "Minecraft Java Edition",
+      "softwareRequirements": "Minecraft 26.2, Fabric Loader 0.19.3+, Fabric API 0.154.0+26.2, Java 25+",
+      "url": "https://diamondrush-mcmod.vercel.app/",
+      "downloadUrl": "https://github.com/Alshahriar-07/diamond-rush-minecraft-mod/releases/download/v4/Diamond-Rush-1v1-v4.jar",
+      "sameAs": [
+        "https://github.com/Alshahriar-07/diamond-rush-minecraft-mod",
+        "https://modrinth.com/mod/diamondrush1v1"
+      ],
+      "author": {
+        "@type": "Person",
+        "name": "Al Shahriar Sowan",
+        "url": "https://alshahriarsayon.vercel.app/"
+      },
+      "publisher": { "@id": "https://diamondrush-mcmod.vercel.app/#organization" },
+      "license": "https://github.com/Alshahriar-07/diamond-rush-minecraft-mod/blob/main/LICENSE"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://diamondrush-mcmod.vercel.app/#organization",
+      "name": "Eagox Studio",
+      "url": "https://eagoxstudio.vercel.app/",
+      "founder": {
+        "@type": "Person",
+        "name": "Al Shahriar Sowan",
+        "url": "https://alshahriarsayon.vercel.app/"
+      }
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -16,118 +87,555 @@
   --photo:url('minecraft-bg.jpg');
   --night:#0a111d; --ink:#e8eef2; --mute:#9aaab6; --dia:#4de8e0; --dia-hi:#bffaf6; --dia-lo:#1fb5b0; --gold:#f2c14e;
   --px:'Press Start 2P',monospace;
+  --obsidian:#070b12;
+  --deepslate:#101722;
+  --deepslate-2:#151f2b;
+  --stone:#2b3540;
+  --stone-hi:#4a5662;
+  --slot:#091019;
+  --slot-hi:#172534;
+  --line:#2d3b49;
+  --emerald:#4fd177;
+  --redstone:#e05a52;
+  --white:#f3f7f9;
+  --shadow:0 8px 0 rgba(0,0,0,.55);
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{background:var(--night);color:var(--ink);font:17px/1.6 'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-:focus-visible{outline:3px solid var(--dia);outline-offset:3px}
-code{font-family:ui-monospace,Consolas,monospace;font-size:.92em}
 
-/* background stack */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{background:var(--night);color:var(--ink);font:17px/1.65 'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
+body.nav-open{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+img{max-width:100%}
+:focus-visible{outline:3px solid var(--dia);outline-offset:4px}
+code{font-family:ui-monospace,Consolas,monospace;font-size:.92em}
+::selection{background:var(--dia);color:#04161a}
+
+/* PRESERVED BACKGROUND STACK — visual implementation intentionally unchanged. */
 #world{position:fixed;left:-20px;top:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;image-rendering:pixelated;z-index:-3;transition:transform .2s ease-out}
 .photo{position:fixed;inset:0;z-index:-2;background:var(--photo) center/cover no-repeat}
 .veil{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,10,15,.5),rgba(6,10,15,.82) 60%,rgba(6,10,15,.92))}
 
-.wrap{width:min(1080px,90%);margin:auto}
-.blk{background:rgba(10,16,22,.74);border:2px solid #000;box-shadow:inset 2px 2px 0 rgba(255,255,255,.08),inset -2px -2px 0 rgba(0,0,0,.4);backdrop-filter:blur(6px)}
+.wrap{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+.pixel-panel{
+  position:relative;
+  background:
+    repeating-linear-gradient(0deg,rgba(255,255,255,.024) 0 1px,transparent 1px 4px),
+    linear-gradient(145deg,rgba(21,31,43,.97),rgba(8,14,21,.97));
+  border:3px solid #030507;
+  box-shadow:
+    0 0 0 2px #2a3744,
+    inset 2px 2px 0 rgba(255,255,255,.09),
+    inset -2px -2px 0 rgba(0,0,0,.6),
+    var(--shadow);
+}
+.pixel-panel::before,.pixel-panel::after{
+  content:"";position:absolute;width:5px;height:5px;background:var(--stone-hi);z-index:2;
+  box-shadow:0 0 0 1px #000;
+}
+.pixel-panel::before{left:7px;top:7px}
+.pixel-panel::after{right:7px;top:7px}
 
-/* buttons: Minecraft-style bevels */
-.btn{display:inline-block;font:12px/1 var(--px);padding:15px 18px;border:2px solid #000;color:#fff;cursor:pointer;background:#5b5b5b;box-shadow:inset 3px 3px 0 #8d8d8d,inset -3px -3px 0 #3a3a3a,0 4px 0 #000;transition:background .15s}
-.btn:hover{background:#6b76a3}
-.btn:active{transform:translateY(3px);box-shadow:inset 3px 3px 0 #8d8d8d,inset -3px -3px 0 #3a3a3a,0 1px 0 #000}
-.btn.go{background:var(--dia);color:#04161a;box-shadow:inset 3px 3px 0 var(--dia-hi),inset -3px -3px 0 var(--dia-lo),0 4px 0 #000}
-.btn.go:hover{background:var(--dia-hi)}
-.btn.go:active{box-shadow:inset 3px 3px 0 var(--dia-hi),inset -3px -3px 0 var(--dia-lo),0 1px 0 #000}
+/* ---------- pixel controls ---------- */
+.pixel-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:52px;padding:16px 20px;border:3px solid #030507;
+  font:10px/1.45 var(--px);letter-spacing:.02em;text-align:center;text-transform:uppercase;
+  color:#fff;background:#5d6772;cursor:pointer;
+  box-shadow:inset 3px 3px 0 #8e98a2,inset -3px -3px 0 #343d46,0 5px 0 #000;
+  transition:transform .14s steps(2,end),background .14s,box-shadow .14s;
+}
+.pixel-btn:hover{background:#6b7785;transform:translateY(-2px);box-shadow:inset 3px 3px 0 #a2acb5,inset -3px -3px 0 #343d46,0 7px 0 #000}
+.pixel-btn:active{transform:translateY(4px);box-shadow:inset 3px 3px 0 #8e98a2,inset -3px -3px 0 #343d46,0 1px 0 #000}
+.pixel-btn--diamond{background:var(--dia);color:#031417;box-shadow:inset 3px 3px 0 var(--dia-hi),inset -3px -3px 0 var(--dia-lo),0 5px 0 #000}
+.pixel-btn--diamond:hover{background:#7af2eb;box-shadow:inset 3px 3px 0 #ddfffd,inset -3px -3px 0 var(--dia-lo),0 7px 0 #000}
+.pixel-btn--emerald{background:#23894b;color:#f2fff6;box-shadow:inset 3px 3px 0 #50d982,inset -3px -3px 0 #0f5a2a,0 5px 0 #000}
+.pixel-btn--emerald:hover{background:#2b9f58;box-shadow:inset 3px 3px 0 #6de99c,inset -3px -3px 0 #0f5a2a,0 7px 0 #000}
+.pixel-btn--gold{background:var(--gold);color:#1c1302;box-shadow:inset 3px 3px 0 #ffe18a,inset -3px -3px 0 #9e7316,0 5px 0 #000}
+.pixel-btn--gold:hover{background:#ffd66b;box-shadow:inset 3px 3px 0 #fff0b8,inset -3px -3px 0 #9e7316,0 7px 0 #000}
+.pixel-btn img{width:18px;height:18px;image-rendering:pixelated;flex:none}
+.pixel-btn--small{min-height:44px;padding:12px 14px;font-size:8px}
+.btn-icon{width:19px;height:19px;display:inline-grid;place-items:center;flex:none}
+.btn-icon svg{width:19px;height:19px;display:block;fill:currentColor}
 
-/* nav */
-nav{position:sticky;top:0;z-index:50;background:rgba(8,12,18,.8);backdrop-filter:blur(10px);border-bottom:2px solid #000}
-.nav{display:flex;align-items:center;justify-content:space-between;height:70px}
-.brand{display:flex;align-items:center;gap:12px;font:13px var(--px)}
-.gem{width:20px;height:20px;background:var(--dia);box-shadow:inset 4px 4px 0 var(--dia-hi),inset -4px -4px 0 var(--dia-lo),0 0 0 2px #000}
-.links{display:flex;gap:28px;color:var(--mute);font-weight:500;font-size:16px}
-.links a:hover{color:var(--dia)}
-nav .btn{padding:12px 14px;font-size:10px}
+.pixel-tag{
+  display:inline-flex;align-items:center;gap:8px;padding:7px 10px;
+  border:2px solid #000;background:#081019;color:var(--mute);
+  font:7px/1.5 var(--px);letter-spacing:.03em;text-transform:uppercase;
+  box-shadow:inset 2px 2px 0 rgba(255,255,255,.06);
+}
+.pixel-tag--live{color:var(--dia);border-color:#173a40;background:#06171a}
+.pixel-tag--gold{color:var(--gold);border-color:#4a3b16;background:#171207}
+.dot{width:8px;height:8px;background:var(--emerald);box-shadow:0 0 0 2px #06210f;flex:none}
+.dot--cyan{background:var(--dia);box-shadow:0 0 0 2px #05282b}
 
-/* hero */
-.hero{display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:center;min-height:calc(100vh - 70px);padding:60px 0}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
-.chip-t{font-weight:700;font-size:14px;padding:5px 10px;background:#000;border:2px solid #2d3b47;color:var(--dia)}
-h1{font:clamp(26px,4.8vw,54px)/1.3 var(--px);text-shadow:4px 4px 0 #000}
-.lead{margin:26px 0 34px;max-width:30em;font-size:20px;color:#c6d3dc}
-.row{display:flex;flex-wrap:wrap;gap:16px}
+/* ---------- navigation ---------- */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(7,11,18,.97);
+  border-bottom:4px solid #020405;
+  box-shadow:0 5px 0 rgba(0,0,0,.4);
+}
+.site-header::after{
+  content:"";display:block;height:4px;
+  background:repeating-linear-gradient(90deg,var(--dia) 0 18px,#132a31 18px 36px);
+  opacity:.65;
+}
+.nav-shell{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:82px;position:relative}
+.brand{display:flex;align-items:center;gap:12px;flex:none}
+.brand img{width:46px;height:46px;image-rendering:pixelated;border:2px solid #000;box-shadow:inset 0 0 0 2px #283541}
+.brand-copy{display:flex;flex-direction:column;gap:3px}
+.brand-name{font:11px/1.5 var(--px);letter-spacing:-.02em;color:var(--white);text-shadow:2px 2px 0 #000}
+.brand-sub{font:7px/1.4 var(--px);letter-spacing:.06em;color:var(--dia)}
+.nav-menu{display:flex;align-items:center;gap:2px}
+.nav-link{
+  position:relative;display:inline-flex;align-items:center;gap:7px;
+  padding:16px 9px;font:7px/1.4 var(--px);text-transform:uppercase;color:#b3c1cb;
+  transition:color .14s;
+}
+.nav-link:hover,.nav-link:focus-visible,.nav-link.is-active{color:var(--white)}
+.nav-link.is-active::after{
+  content:"";position:absolute;left:7px;right:7px;bottom:7px;height:4px;
+  background:var(--dia);box-shadow:0 2px 0 #000;
+}
+.nav-link svg{width:15px;height:15px;fill:currentColor;flex:none}
+.nav-link--icon{padding-inline:9px}
+.nav-toggle{
+  display:none;width:48px;height:44px;border:3px solid #000;background:#1b2834;cursor:pointer;
+  box-shadow:inset 2px 2px 0 #405164,inset -2px -2px 0 #070b10,0 3px 0 #000;
+  align-items:center;justify-content:center;flex-direction:column;gap:5px;
+}
+.nav-toggle span{display:block;width:22px;height:4px;background:var(--dia);box-shadow:0 0 0 1px #000;transition:transform .15s,opacity .15s}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
 
-/* mineable ore */
-.mine{display:flex;flex-direction:column;align-items:center;gap:20px}
+/* ---------- hero ---------- */
+.hero{
+  display:grid;grid-template-columns:minmax(0,1.06fr) minmax(380px,.94fr);
+  gap:clamp(36px,5vw,72px);align-items:center;
+  min-height:calc(100vh - 90px);padding:70px 0 84px;
+}
+.eyebrow{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.eyebrow__line{width:34px;height:4px;background:var(--dia);box-shadow:0 0 0 2px #000}
+.hero h1{
+  font:clamp(33px,5.7vw,67px)/1.25 var(--px);
+  text-shadow:5px 5px 0 #000;letter-spacing:-.045em;margin-bottom:26px;
+}
+.hero h1 span{display:block}
+.hero h1 .hero-title-accent{color:var(--dia);text-shadow:5px 5px 0 #000,9px 9px 0 rgba(0,0,0,.32);margin-top:8px}
+.hero h1 .hero-title-accent small{font-size:.42em;color:var(--gold);vertical-align:middle;margin-left:8px;letter-spacing:0}
+.hero-lead{max-width:620px;font-size:clamp(17px,1.5vw,20px);line-height:1.75;color:#d1dce4}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-note{display:flex;align-items:center;gap:9px;margin-top:20px;color:#aebbc5;font-size:14px}
+.hero-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:32px;max-width:650px}
+.meta-slot{
+  min-height:70px;padding:12px 11px;border:2px solid #000;
+  background:rgba(8,15,23,.88);
+  box-shadow:inset 2px 2px 0 rgba(255,255,255,.06),inset -2px -2px 0 rgba(0,0,0,.5);
+}
+.meta-slot small{display:block;font:6px/1.5 var(--px);color:#8395a3;text-transform:uppercase;margin-bottom:7px}
+.meta-slot strong{display:block;font:8px/1.5 var(--px);color:var(--ink);text-transform:uppercase}
+.meta-slot strong.cyan{color:var(--dia)}
+.meta-slot strong.gold{color:var(--gold)}
+
+.hero-stage{position:relative;isolation:isolate;padding:18px 0 18px 16px}
+.block-deco{
+  position:absolute;z-index:-1;width:78px;height:78px;border:4px solid #000;
+  background:linear-gradient(135deg,#315c60 0 24%,#1c3f43 24% 48%,#4de8e0 48% 52%,#163236 52% 100%);
+  box-shadow:inset 5px 5px 0 rgba(255,255,255,.13),inset -5px -5px 0 rgba(0,0,0,.42),8px 8px 0 rgba(0,0,0,.35);
+  image-rendering:pixelated;
+}
+.block-deco--one{right:-8px;top:-22px;transform:rotate(4deg)}
+.block-deco--two{left:-22px;bottom:8px;width:54px;height:54px;background:linear-gradient(135deg,#6c5523,#a7802b 35%,#3b2e12 36% 100%);transform:rotate(-5deg)}
+.hero-console{padding:12px;background:rgba(8,14,21,.94)}
+.console-top{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  border:2px solid #000;background:#0b141e;padding:10px 12px;margin-bottom:10px;
+  font:6px/1.5 var(--px);color:#aab8c3;letter-spacing:.03em;
+}
+.console-top span{display:flex;align-items:center;gap:7px}
+.console-dots{display:flex;gap:4px}
+.console-dots i{display:block;width:7px;height:7px;background:#324454;box-shadow:0 0 0 1px #000}
+.console-dots i:nth-child(1){background:var(--redstone)}
+.console-dots i:nth-child(2){background:var(--gold)}
+.console-dots i:nth-child(3){background:var(--emerald)}
+.ore-zone{display:grid;grid-template-columns:minmax(0,1fr) minmax(126px,.62fr);gap:10px;align-items:stretch}
+.ore-stage{
+  position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  min-height:296px;padding:20px;border:2px solid #000;background:
+    repeating-linear-gradient(45deg,rgba(255,255,255,.025) 0 8px,transparent 8px 16px),
+    #09121a;
+  box-shadow:inset 4px 4px 0 rgba(255,255,255,.04),inset -4px -4px 0 rgba(0,0,0,.48);
+}
 .ore-wrap{position:relative}
-#oreBtn{display:block;width:min(230px,52vw);aspect-ratio:1;background:none;border:4px solid #000;cursor:pointer;padding:0;box-shadow:8px 8px 0 rgba(0,0,0,.5)}
+#oreBtn{
+  display:block;width:min(238px,46vw);aspect-ratio:1;padding:0;cursor:pointer;
+  border:6px solid #030507;background:#111;box-shadow:
+    0 0 0 2px #4b5a65,inset 0 0 0 2px #000,
+    10px 10px 0 rgba(0,0,0,.38);
+  transition:filter .15s,transform .15s;
+}
+#oreBtn:hover{filter:brightness(1.16);transform:translateY(-2px)}
+#oreBtn:active{transform:translateY(2px)}
 #oreBtn.shake{animation:shake .18s}
 @keyframes shake{25%{transform:translate(-4px,2px)}75%{transform:translate(4px,-2px)}}
 #ore{width:100%;height:100%;image-rendering:pixelated;display:block}
 .chip{position:absolute;left:50%;top:50%;width:12px;height:12px;border:2px solid #000;animation:fly .8s cubic-bezier(.3,.6,.5,1) forwards;pointer-events:none}
 @keyframes fly{to{transform:translate(var(--dx),var(--dy));opacity:0}}
-.score{font:11px/1.8 var(--px);text-align:center}
-.score small{display:block;font:14px 'DM Sans';color:var(--mute);margin-top:4px}
+.ore-label{font:6px/1.5 var(--px);color:#8ca0ae;text-transform:uppercase;letter-spacing:.08em;text-align:center}
+.ore-label strong{color:var(--dia);display:block;margin-top:5px}
+.console-side{display:flex;flex-direction:column;gap:10px}
+.mini-panel{
+  flex:1;padding:13px 11px;border:2px solid #000;background:#0b151e;
+  box-shadow:inset 2px 2px 0 rgba(255,255,255,.05),inset -2px -2px 0 rgba(0,0,0,.55);
+}
+.mini-panel small{display:block;font:6px/1.5 var(--px);color:#7d909e;text-transform:uppercase;margin-bottom:10px}
+.score-value{font:20px/1.2 var(--px);color:var(--white);text-shadow:3px 3px 0 #000}
+.score-value span{color:var(--dia)}
+.score-sub{font-size:11px;line-height:1.5;color:#8fa1ae;margin-top:8px}
+.match-line{display:flex;align-items:center;justify-content:space-between;gap:6px;font:6px/1.5 var(--px);color:#a8b7c1;margin-top:8px}
+.match-line b{color:var(--gold);font-weight:400}
+.hotbar{display:grid;grid-template-columns:repeat(9,1fr);gap:4px;margin-top:10px;padding:5px;border:2px solid #000;background:#080e15}
+.hotbar-slot{
+  aspect-ratio:1;border:2px solid #000;background:#141f2a;
+  box-shadow:inset 2px 2px 0 rgba(255,255,255,.06),inset -2px -2px 0 rgba(0,0,0,.5);
+  display:grid;place-items:center;min-width:0;
+}
+.hotbar-slot img{width:74%;height:74%;object-fit:contain;image-rendering:pixelated}
+.hotbar-slot.is-selected{outline:3px solid var(--dia);outline-offset:-5px;background:#1b3039}
+.hero-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px;color:#8296a4;font-size:11px}
+.hero-footer code{color:var(--dia);font-size:11px}
+.hero-footer span{display:flex;align-items:center;gap:6px}
 
-/* sections */
-section{padding:90px 0}
-.head{margin-bottom:34px;max-width:36em}
-h2{font:clamp(17px,2.6vw,25px)/1.5 var(--px);text-shadow:3px 3px 0 #000}
-.head p{color:var(--mute);margin-top:12px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{padding:24px}
-.card h3{font:11px/1.7 var(--px);display:flex;gap:10px;align-items:center;margin-bottom:10px}
-.card h3::before{content:"";flex:none;width:12px;height:12px;background:var(--dia);box-shadow:inset 3px 3px 0 var(--dia-hi),inset -3px -3px 0 var(--dia-lo),0 0 0 2px #000}
-.card p{color:var(--mute);font-size:16px}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;list-style:none}
-.steps li{padding:22px}
-.steps b{display:block;font:20px var(--px);color:var(--dia);margin-bottom:16px;text-shadow:3px 3px 0 #000}
-.steps h3{font:11px/1.6 var(--px);margin-bottom:8px}
-.steps p{color:var(--mute);font-size:16px}
+/* ---------- section system ---------- */
+.section{padding:96px 0;position:relative}
+.section--tight{padding-top:74px}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:34px}
+.section-heading{max-width:760px}
+.kicker{display:flex;align-items:center;gap:10px;margin-bottom:15px;font:7px/1.5 var(--px);letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+.kicker::before{content:"";width:14px;height:14px;flex:none;background:var(--gold);box-shadow:inset 3px 3px 0 #ffe18a,inset -3px -3px 0 #9e7316,0 0 0 2px #000}
+.section-head h2{font:clamp(21px,3.1vw,34px)/1.5 var(--px);letter-spacing:-.045em;text-shadow:4px 4px 0 #000;color:var(--white)}
+.section-head h2 em{font-style:normal;color:var(--dia)}
+.section-head p{max-width:650px;margin-top:14px;color:#b3c0ca;font-size:16px;line-height:1.75}
+.section-aside{max-width:255px;padding:12px 14px;border-left:3px solid var(--line);color:#92a3af;font-size:13px;line-height:1.7}
+.section-aside strong{display:block;color:var(--dia);font:7px/1.7 var(--px);margin-bottom:6px;text-transform:uppercase}
 
-/* install */
-.box{padding:28px;max-width:820px}
-.tabs{display:flex;gap:10px;margin-bottom:24px}
-.tab{font:11px var(--px);padding:12px 16px;color:var(--mute);background:#1a242d;border:2px solid #000;cursor:pointer}
-.tab[aria-selected=true]{color:#04161a;background:var(--dia)}
-.req{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px}
-.req div{padding:12px;background:rgba(0,0,0,.35);border:2px solid #000}
-.req small{display:block;color:var(--mute);font-size:13px}
-.req strong{font-size:15px}
-ol.list{padding-left:22px;color:#c6d3dc;line-height:1.95}
-ol.list li::marker{color:var(--dia);font-weight:700}
-.note{margin-top:24px;padding:14px 16px;border-left:4px solid var(--gold);background:rgba(242,193,78,.07);color:#e3d6aa;font-size:16px}
+/* ---------- feature inventory ---------- */
+.feature-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;list-style:none}
+.feature-card{
+  display:flex;flex-direction:column;min-height:246px;padding:20px 18px 18px;
+  transition:transform .18s steps(2,end),border-color .18s,box-shadow .18s;
+}
+.feature-card:hover{transform:translateY(-5px);border-color:#416070;box-shadow:0 0 0 2px #3d5a68,inset 2px 2px 0 rgba(255,255,255,.12),inset -2px -2px 0 rgba(0,0,0,.6),0 13px 0 rgba(0,0,0,.48)}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.card-num{font:7px/1.4 var(--px);color:#718591;letter-spacing:.04em}
+.card-tag{font:6px/1.4 var(--px);color:var(--emerald);letter-spacing:.03em;text-transform:uppercase}
+.feature-icon{
+  display:grid;place-items:center;width:54px;height:54px;margin:19px 0 16px;
+  border:3px solid #000;background:#182633;
+  box-shadow:inset 3px 3px 0 #334858,inset -3px -3px 0 #060b10,4px 4px 0 rgba(0,0,0,.3);
+}
+.feature-icon img{width:34px;height:34px;object-fit:contain;image-rendering:pixelated}
+.feature-card h3{font:8.5px/1.65 var(--px);letter-spacing:-.02em;color:var(--white);margin-bottom:9px}
+.feature-card p{font-size:14.5px;line-height:1.65;color:#aabac5;margin-top:auto}
+.feature-card code{color:var(--dia);font-size:.9em}
 
-/* commands */
-.cmds{max-width:820px}
-.cmds h3{font:11px var(--px);color:var(--dia);margin:30px 0 12px}
-.cmds h3:first-child{margin-top:0}
-.cmd{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:12px 16px;margin-bottom:8px;font:inherit;color:inherit;cursor:pointer;background:rgba(10,16,22,.74);border:2px solid #000;box-shadow:inset 2px 2px 0 rgba(255,255,255,.06)}
-.cmd:hover{border-color:var(--dia)}
-.cmd code{color:var(--dia);flex:1;overflow-wrap:anywhere}
-.cmd span{color:var(--mute);font-size:15px;text-align:right}
-.cmd em{font:normal 9px var(--px);color:#04161a;background:var(--dia);padding:6px 8px;opacity:0;transition:opacity .15s}
-.cmd:hover em,.cmd:focus-visible em{opacity:1}
+/* ---------- rounds ---------- */
+.round-list{display:grid;gap:14px}
+.round-card{
+  --accent:var(--dia);--accent-hi:var(--dia-hi);--accent-lo:var(--dia-lo);
+  display:grid;grid-template-columns:96px minmax(0,1fr) 278px;gap:24px;align-items:center;
+  padding:24px 26px;overflow:hidden;border-left:6px solid var(--accent);
+}
+.round-card:nth-child(2){--accent:var(--gold);--accent-hi:#ffe18a;--accent-lo:#9e7316}
+.round-card:nth-child(3){--accent:var(--emerald);--accent-hi:#a4f8bd;--accent-lo:#146331}
+.round-card::after{
+  content:attr(data-round);position:absolute;right:22px;bottom:-30px;
+  font:56px/1 var(--px);color:var(--accent);opacity:.055;pointer-events:none;
+}
+.round-index{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;align-self:stretch;border-right:2px solid #24313c;padding-right:14px}
+.round-index b{font:26px/1 var(--px);color:var(--accent);text-shadow:3px 3px 0 #000}
+.round-index span{font:6px/1.5 var(--px);color:#778b98;text-transform:uppercase;text-align:center}
+.round-art{display:grid;place-items:center;width:100%;max-width:250px;aspect-ratio:16/7;border:3px solid #000;background:
+  repeating-linear-gradient(45deg,rgba(255,255,255,.035) 0 6px,transparent 6px 12px),
+  linear-gradient(145deg,#13212c,#070d13);
+  box-shadow:inset 3px 3px 0 rgba(255,255,255,.07),inset -3px -3px 0 rgba(0,0,0,.55);
+}
+.round-art img{width:72px;height:72px;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(5px 5px 0 rgba(0,0,0,.5))}
+.round-copy{min-width:0}
+.round-kicker{font:6px/1.5 var(--px);letter-spacing:.08em;color:var(--accent);text-transform:uppercase;margin-bottom:7px}
+.round-copy h3{font:clamp(12px,1.4vw,15px)/1.55 var(--px);letter-spacing:-.03em;color:var(--white);margin-bottom:8px;text-shadow:2px 2px 0 #000}
+.round-copy p{font-size:14.5px;line-height:1.65;color:#aabac5;max-width:530px}
+.loadout{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;margin-top:14px}
+.loot-item{display:flex;align-items:center;gap:7px;min-width:0;padding:6px 7px;border:2px solid #000;background:#0b151e;color:#bac8d1;font-size:10px;line-height:1.2}
+.loot-item img{width:21px;height:21px;object-fit:contain;image-rendering:pixelated;flex:none}
+.loot-item span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.loot-empty{grid-column:1/-1;padding:8px;border:2px dashed #334450;color:#899ba7;font-size:10.5px;text-align:center}
 
-/* download */
-.final{padding:56px 32px;text-align:center}
-.final p{color:var(--mute);margin:14px 0 30px}
-.final .row{justify-content:center}
-footer{border-top:2px solid #000;background:rgba(6,10,15,.85);padding:26px 0;color:var(--mute);font-size:15px}
-.foot{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
-.foot a:hover{color:var(--dia)}
-#toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,90px);background:var(--dia);color:#04161a;font:10px var(--px);padding:14px 16px;border:2px solid #000;box-shadow:0 4px 0 #000;transition:transform .25s;z-index:99}
+/* ---------- menu preview ---------- */
+.showcase-shell{padding:14px;background:rgba(7,13,20,.96)}
+.showcase-topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;border:2px solid #000;background:#0b141e;margin-bottom:10px;font:6px/1.5 var(--px);letter-spacing:.03em;color:#8fa3b0}
+.showcase-topbar span{display:flex;align-items:center;gap:8px}
+.showcase-topbar b{color:var(--gold);font-weight:400}
+.menu-preview{display:grid;grid-template-columns:252px minmax(0,1fr);min-height:420px;border:3px solid #000;background:#071019;box-shadow:inset 3px 3px 0 rgba(255,255,255,.04)}
+.menu-sidebar{padding:18px 14px;border-right:3px solid #000;background:
+  repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 4px),
+  #0d1924}
+.menu-brand{display:flex;align-items:center;gap:10px;padding-bottom:15px;border-bottom:2px solid #273744;margin-bottom:14px}
+.menu-brand img{width:35px;height:35px;image-rendering:pixelated;border:2px solid #000}
+.menu-brand strong{display:block;font:7px/1.6 var(--px);color:var(--white)}
+.menu-brand small{display:block;font:6px/1.5 var(--px);color:var(--dia);margin-top:2px}
+.menu-nav{display:grid;gap:6px}
+.menu-nav-row{display:flex;align-items:center;gap:9px;padding:10px;border:2px solid transparent;color:#aebdc8;font:6px/1.5 var(--px)}
+.menu-nav-row img{width:19px;height:19px;object-fit:contain;image-rendering:pixelated;flex:none}
+.menu-nav-row.is-active{border-color:#3f6871;background:#102b31;color:var(--dia);box-shadow:inset 2px 2px 0 rgba(255,255,255,.06)}
+.menu-nav-row .menu-count{margin-left:auto;color:var(--gold);font-size:6px}
+.menu-content{padding:22px}
+.menu-title-row{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;border-bottom:2px solid #273744;padding-bottom:12px;margin-bottom:16px}
+.menu-title-row h3{font:11px/1.5 var(--px);color:var(--white);text-shadow:2px 2px 0 #000}
+.menu-title-row p{font-size:12px;color:#899ba7;margin-top:5px}
+.live-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 8px;border:2px solid #000;background:#07171b;font:6px/1.4 var(--px);color:var(--dia);white-space:nowrap}
+.live-pill .dot{width:6px;height:6px}
+.menu-tile-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.menu-tile{display:flex;align-items:center;gap:9px;min-height:58px;padding:10px 11px;border:2px solid #000;background:#111e2a;box-shadow:inset 2px 2px 0 rgba(255,255,255,.05),inset -2px -2px 0 rgba(0,0,0,.4)}
+.menu-tile img{width:27px;height:27px;object-fit:contain;image-rendering:pixelated;flex:none}
+.menu-tile b{display:block;font:6px/1.5 var(--px);color:#dbe8ee;text-transform:uppercase}
+.menu-tile small{display:block;color:#8195a2;font-size:10px;line-height:1.3;margin-top:3px}
+.menu-hud{margin-top:10px;padding:12px;border:2px solid #000;background:#0b151e}
+.menu-hud-head{display:flex;align-items:center;justify-content:space-between;gap:10px;font:6px/1.5 var(--px);color:#8497a4;margin-bottom:8px}
+.menu-hud-head b{color:var(--gold);font-weight:400}
+.menu-hud-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;text-align:center}
+.menu-hud-player strong{display:block;font:7px/1.5 var(--px);color:#dbe8ee;overflow:hidden;text-overflow:ellipsis}
+.menu-hud-player span{display:block;margin-top:6px;font:20px/1 var(--px);color:var(--dia)}
+.menu-hud-player:last-child span{color:#f1b1aa}
+.menu-hud-vs{font:8px/1.4 var(--px);color:var(--gold)}
+.menu-hud-objective{grid-column:1/-1;margin-top:4px;padding-top:8px;border-top:2px solid #243440;color:#9eb0bb;font-size:11px}
+.menu-hud-objective b{color:var(--white);font-weight:500}
+.showcase-note{display:flex;align-items:flex-start;gap:9px;margin-top:13px;color:#879aa6;font-size:12px;line-height:1.6}
+.showcase-note strong{font:6px/1.6 var(--px);color:var(--gold);white-space:nowrap;padding-top:2px}
+
+/* ---------- installation ---------- */
+.install-grid{display:grid;grid-template-columns:330px minmax(0,1fr);gap:16px;align-items:start}
+.install-side,.install-panel{padding:23px}
+.install-side h3,.install-panel h3{font:9px/1.6 var(--px);color:var(--white);margin-bottom:14px;text-shadow:2px 2px 0 #000}
+.req-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.req-slot{min-height:66px;padding:10px 9px;border:2px solid #000;background:#0b151e;box-shadow:inset 2px 2px 0 rgba(255,255,255,.05)}
+.req-slot small{display:block;font:6px/1.4 var(--px);color:#7e929f;text-transform:uppercase;margin-bottom:8px}
+.req-slot strong{display:block;font:7px/1.55 var(--px);color:var(--white);text-transform:uppercase}
+.req-slot strong.cyan{color:var(--dia)}
+.req-slot strong.gold{color:var(--gold)}
+.install-note{margin-top:15px;padding:12px;border-left:3px solid var(--gold);background:rgba(242,193,78,.06);color:#d7cba4;font-size:12.5px;line-height:1.65}
+.install-note strong{color:var(--gold);font-weight:700}
+.install-panel{background:rgba(7,13,20,.96)}
+.install-tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px}
+.install-tab{display:inline-flex;align-items:center;gap:7px;padding:10px 12px;border:2px solid #000;background:#162531;color:#9eb0bb;font:6px/1.5 var(--px);text-transform:uppercase;cursor:pointer;box-shadow:inset 2px 2px 0 rgba(255,255,255,.06)}
+.install-tab[aria-selected="true"]{background:var(--dia);color:#04161a;box-shadow:inset 2px 2px 0 var(--dia-hi),inset -2px -2px 0 var(--dia-lo)}
+.install-tab:focus-visible{outline-offset:3px}
+.quest-list{list-style:none;display:grid;gap:7px}
+.quest-item{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:start;padding:10px 11px;border:2px solid #000;background:#0b151e}
+.quest-num{display:grid;place-items:center;width:38px;height:38px;border:2px solid #000;background:#162531;color:var(--dia);font:11px/1 var(--px);box-shadow:inset 2px 2px 0 rgba(255,255,255,.06)}
+.quest-item h4{font:7px/1.6 var(--px);color:#e8f0f4;margin:1px 0 4px;text-transform:uppercase}
+.quest-item p{font-size:13px;line-height:1.6;color:#9fb0bb}
+.quest-item code{color:var(--dia);font-size:12px}
+.install-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:14px;padding-top:13px;border-top:2px solid #243440}
+.install-footer span{color:#8799a5;font-size:12px}
+.command-chip{display:inline-flex;align-items:center;gap:8px;padding:8px 9px;border:2px solid #000;background:#0b171c;cursor:pointer}
+.command-chip code{color:var(--dia);font-size:12px}
+.command-chip em{font:6px/1.4 var(--px);font-style:normal;color:#04161a;background:var(--dia);padding:4px 5px}
+.command-chip:hover{border-color:var(--dia)}
+
+/* ---------- download ---------- */
+.download-panel{
+  display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:34px;align-items:center;
+  padding:clamp(26px,4.5vw,48px);overflow:hidden;
+  border-left:7px solid var(--gold);
+}
+.download-panel::before{background:var(--gold)}
+.download-copy{position:relative;z-index:1}
+.download-kicker{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:12px}
+.download-title{font:clamp(21px,3vw,34px)/1.4 var(--px);letter-spacing:-.045em;color:var(--white);text-shadow:4px 4px 0 #000;margin-bottom:12px}
+.download-title span{color:var(--dia)}
+.download-lead{max-width:620px;color:#b3c0ca;font-size:15px;line-height:1.7}
+.download-file{display:inline-flex;align-items:center;flex-wrap:wrap;gap:8px;margin:17px 0 21px;padding:9px 11px;border:2px solid #2b3a46;background:#09121a;color:#9db0bc;font-size:11px}
+.download-file code{color:var(--gold);overflow-wrap:anywhere}
+.download-actions{display:flex;flex-wrap:wrap;gap:9px}
+.download-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.download-side{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:20px 16px;border:3px solid #000;background:#071019;box-shadow:inset 3px 3px 0 rgba(255,255,255,.05),inset -3px -3px 0 rgba(0,0,0,.6)}
+.download-side img{width:94px;height:94px;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(6px 6px 0 rgba(0,0,0,.45))}
+.download-side .version-big{font:21px/1.3 var(--px);color:var(--gold);text-shadow:3px 3px 0 #000}
+.download-side p{font-size:11px;line-height:1.5;color:#8397a4}
+.download-side .side-rule{width:100%;height:2px;background:#263743;margin:2px 0}
+.download-side .side-status{font:6px/1.5 var(--px);color:var(--emerald);text-transform:uppercase}
+
+/* ---------- credits ---------- */
+.credits-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.credit-card{display:flex;flex-direction:column;min-height:235px;padding:24px}
+.credit-role{font:6px/1.5 var(--px);letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:13px}
+.credit-card h3{font:clamp(12px,1.5vw,16px)/1.5 var(--px);color:var(--white);text-shadow:3px 3px 0 #000;margin-bottom:8px}
+.credit-card p{font-size:14px;line-height:1.65;color:#a6b7c2;max-width:460px}
+.credit-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:18px}
+.credit-mark{display:flex;align-items:center;gap:9px;color:#8da0ac;font-size:12px}
+.credit-mark img{width:29px;height:29px;object-fit:contain;image-rendering:pixelated;border:2px solid #000;background:#0b151e;padding:3px}
+.credit-link{display:inline-flex;align-items:center;gap:7px;font:6px/1.5 var(--px);color:var(--dia);text-transform:uppercase;border-bottom:2px solid transparent;padding-bottom:3px}
+.credit-link:hover{border-bottom-color:var(--dia)}
+.credit-link img{width:16px;height:16px;object-fit:contain;image-rendering:pixelated}
+
+/* ---------- footer ---------- */
+.site-footer{margin-top:30px;border-top:4px solid #020405;background:rgba(4,8,13,.96);box-shadow:0 -4px 0 rgba(0,0,0,.35)}
+.footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px;padding:46px 0 34px}
+.footer-brand{display:flex;align-items:center;gap:11px;margin-bottom:13px}
+.footer-brand img{width:39px;height:39px;image-rendering:pixelated;border:2px solid #000}
+.footer-brand strong{display:block;font:9px/1.6 var(--px);color:var(--white)}
+.footer-brand small{display:block;font:6px/1.5 var(--px);color:var(--dia);margin-top:3px}
+.footer-blurb{max-width:280px;color:#8fa1ad;font-size:13px;line-height:1.7}
+.footer-version{display:inline-flex;align-items:center;gap:7px;margin-top:14px;font:6px/1.4 var(--px);color:var(--gold);text-transform:uppercase}
+.footer-version .dot{width:6px;height:6px;background:var(--gold);box-shadow:0 0 0 2px #2b230b}
+.footer-col h3{font:7px/1.5 var(--px);color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+.footer-col a{display:block;width:fit-content;padding:4px 0;color:#9fb0bb;font-size:13px}
+.footer-col a:hover{color:var(--dia)}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:15px 0 20px;border-top:2px solid #1c2935;color:#7f929f;font-size:11.5px}
+.footer-bottom a{color:#b7c5cd}
+.footer-bottom a:hover{color:var(--dia)}
+
+/* ---------- motion + toast ---------- */
+.reveal{opacity:0;transform:translateY(18px)}
+.reveal.is-visible{animation:pixel-rise .55s steps(5,end) forwards}
+@keyframes pixel-rise{to{opacity:1;transform:translateY(0)}}
+#toast{
+  position:fixed;left:50%;bottom:26px;z-index:200;
+  transform:translate(-50%,96px);
+  background:var(--dia);color:#04161a;border:2px solid #000;
+  padding:13px 16px;font:8px/1.5 var(--px);box-shadow:0 5px 0 #000;
+  transition:transform .22s steps(3,end);pointer-events:none;
+}
 #toast.on{transform:translate(-50%,0)}
 
-@media(max-width:860px){
-  .hero{grid-template-columns:1fr;min-height:0;padding:50px 0}
-  .grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.req{grid-template-columns:repeat(2,1fr)}
+@media(max-width:1120px){
+  .nav-link{padding-inline:7px;font-size:6.5px}
+  .hero{grid-template-columns:minmax(0,1fr) minmax(355px,.9fr);gap:34px}
+  .feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .feature-card{min-height:220px}
 }
-@media(max-width:600px){
-  .links{display:none}.grid,.steps{grid-template-columns:1fr}
-  section{padding:64px 0}.cmd{flex-wrap:wrap}.cmd span{text-align:left;width:100%}.cmd em{display:none}
+
+@media(max-width:980px){
+  .nav-toggle{display:flex}
+  .nav-menu{
+    display:none;position:absolute;left:0;right:0;top:calc(100% + 4px);
+    flex-direction:column;align-items:stretch;gap:0;padding:9px;
+    background:#08111a;border:3px solid #000;box-shadow:0 8px 0 rgba(0,0,0,.5);
+    max-height:calc(100vh - 100px);overflow:auto;
+  }
+  .nav-menu.is-open{display:flex}
+  .nav-link{padding:15px 13px;border-bottom:2px solid #15232e;font-size:8px}
+  .nav-link:last-child{border-bottom:0}
+  .nav-link.is-active::after{left:13px;right:auto;bottom:9px;width:5px;height:60%;}
+  .hero{grid-template-columns:1fr;min-height:0;padding:56px 0 70px}
+  .hero-stage{max-width:650px;margin-inline:auto;width:100%}
+  .section{padding:76px 0}
+  .section-head{align-items:flex-start;flex-direction:column;gap:14px}
+  .section-aside{max-width:600px;border-left:0;border-top:3px solid var(--line);padding:11px 0 0}
+  .round-card{grid-template-columns:82px minmax(0,1fr);gap:18px}
+  .round-art{grid-column:1/-1;grid-row:2;max-width:none;aspect-ratio:16/5}
+  .round-copy{grid-column:2;grid-row:1}
+  .round-index{grid-row:1/3}
+  .install-grid{grid-template-columns:1fr}
+  .download-panel{grid-template-columns:1fr;gap:24px}
+  .download-side{flex-direction:row;flex-wrap:wrap;justify-content:center;text-align:left;gap:14px}
+  .download-side .side-rule{display:none}
+  .download-side img{width:62px;height:62px}
+  .download-side .version-big{font-size:17px}
+  .footer-main{grid-template-columns:1.5fr 1fr 1fr;gap:26px}
+  .footer-main .footer-col:last-child{grid-column:2/4}
 }
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+@media(max-width:700px){
+  .wrap{width:min(100% - 28px,1180px)}
+  .brand img{width:40px;height:40px}
+  .brand-name{font-size:9px}
+  .brand-sub{font-size:6px}
+  .hero h1{font-size:clamp(28px,10vw,45px)}
+  .hero-lead{font-size:16px}
+  .hero-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-actions .pixel-btn{flex:1 1 190px}
+  .ore-zone{grid-template-columns:1fr}
+  .console-side{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .hero-stage{padding-left:0}
+  .block-deco--two{left:-8px}
+  .feature-grid{grid-template-columns:1fr}
+  .feature-card{min-height:0}
+  .feature-icon{margin-top:14px}
+  .menu-preview{grid-template-columns:1fr}
+  .menu-sidebar{border-right:0;border-bottom:3px solid #000}
+  .menu-nav{grid-template-columns:1fr 1fr}
+  .menu-brand{padding-bottom:11px;margin-bottom:11px}
+  .menu-content{padding:16px}
+  .menu-tile-grid{grid-template-columns:1fr}
+  .menu-hud-grid{gap:5px}
+  .showcase-topbar{font-size:5.5px;align-items:flex-start;flex-direction:column;gap:4px}
+  .round-card{grid-template-columns:1fr;padding:19px}
+  .round-index{display:flex;flex-direction:row;justify-content:flex-start;align-items:center;border-right:0;border-bottom:2px solid #24313c;padding:0 0 10px}
+  .round-index b{font-size:18px}
+  .round-index span{text-align:left}
+  .round-copy{grid-column:1;grid-row:auto}
+  .round-art{grid-column:1;grid-row:auto;aspect-ratio:16/7}
+  .loadout{grid-template-columns:1fr 1fr}
+  .install-side,.install-panel{padding:18px}
+  .credits-grid{grid-template-columns:1fr}
+  .credit-card{min-height:0}
+  .footer-main{grid-template-columns:1fr 1fr;gap:24px}
+  .footer-main .footer-col:last-child{grid-column:1/-1}
+  .footer-brand{grid-column:1/-1}
+  .footer-blurb{max-width:420px}
+  .footer-bottom{display:block;line-height:1.9}
+  .footer-bottom span{display:block}
+}
+
+@media(max-width:430px){
+  .nav-shell{min-height:74px}
+  .hero{padding-top:42px}
+  .hero-actions{display:grid;grid-template-columns:1fr}
+  .hero-actions .pixel-btn{width:100%}
+  .pixel-btn{font-size:8px;padding-inline:12px}
+  .hero-stats{gap:6px}
+  .meta-slot strong{font-size:7px}
+  .console-side{grid-template-columns:1fr}
+  .hotbar{gap:2px;padding:3px}
+  .ore-stage{padding:12px;min-height:0}
+  .install-tabs{display:grid;grid-template-columns:1fr}
+  .install-tab{justify-content:center}
+  .download-actions{display:grid;grid-template-columns:1fr}
+  .download-actions .pixel-btn{width:100%}
+  .section-head h2{font-size:19px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.modrinth-mark{
+  display:inline-grid;place-items:center;width:18px;height:18px;flex:none;
+  border:2px solid #002d18;background:#00af5c;color:#03170d;
+  font:9px/1 var(--px);box-shadow:inset 2px 2px 0 #50e58f,inset -2px -2px 0 #006b38;
+}
+.nav-link .modrinth-mark{width:15px;height:15px;font-size:7px}
+.footer-about{grid-column:1;grid-row:1/3}
+
+@media(max-width:980px){
+  .footer-main{grid-template-columns:1.5fr 1fr 1fr}
+  .footer-about{grid-column:1/-1;grid-row:auto}
+  .footer-main .footer-col:last-child{grid-column:auto}
+}
+
+@media(max-width:700px){
+  .footer-main{grid-template-columns:1fr 1fr}
+  .footer-about{grid-column:1/-1}
+  .footer-main .footer-col:last-child{grid-column:1/-1}
+}
+
 </style>
 </head>
 <body>
@@ -135,110 +643,374 @@ footer{border-top:2px solid #000;background:rgba(6,10,15,.85);padding:26px 0;col
 <div class="photo" aria-hidden="true"></div>
 <div class="veil" aria-hidden="true"></div>
 
-<nav>
-  <div class="wrap nav">
-    <a class="brand" href="#top"><span class="gem"></span>Diamond Rush</a>
-    <div class="links"><a href="#features">Features</a><a href="#how">How it works</a><a href="#install">Install</a><a href="#commands">Commands</a></div>
-    <a class="btn go" data-dl href="https://github.com/Alshahriar-07/diamond-rush-minecraft-mod/releases/download/v4/Diamond-Rush-1v1-v4.jar" target="_blank" rel="noopener noreferrer">Download V4</a>
-  </div>
-</nav>
-
-<main id="top">
-<header class="wrap hero">
-  <div>
-    <div class="chips"><span class="chip-t">V4 latest release</span><span class="chip-t">Fabric</span><span class="chip-t">Minecraft 26.2</span><span class="chip-t">1v1 multiplayer</span></div>
-    <h1>Diamond Rush 1v1</h1>
-    <p class="lead">Two players, three diamond-themed rounds, one server-authoritative winner. The first to win two rounds takes the best-of-three match.</p>
-    <div class="row">
-      <a class="btn go" data-dl href="https://github.com/Alshahriar-07/diamond-rush-minecraft-mod/releases/download/v4/Diamond-Rush-1v1-v4.jar" target="_blank" rel="noopener noreferrer">Download V4</a>
-      <a class="btn" data-gh href="https://github.com/Alshahriar-07/diamond-rush-minecraft-mod" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a class="btn" data-modrinth href="https://modrinth.com/mod/diamondrush1v1" target="_blank" rel="noopener noreferrer">Modrinth</a>
-    </div>
-  </div>
-  <div class="mine">
-    <div class="ore-wrap" id="oreWrap">
-      <button id="oreBtn" aria-label="Mine the diamond ore"><canvas id="ore" width="16" height="16"></canvas></button>
-    </div>
-    <div class="score" aria-live="polite">Diamonds mined: <span id="count">0</span><small id="hint">Click the block to mine it</small></div>
+<header class="site-header" id="top">
+  <div class="wrap nav-shell">
+    <a class="brand" href="#home" aria-label="Diamond Rush 1v1 home">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAD4ElEQVR42u3doY4UQRCH8VMk5CAEBwKFQqDQhPdB8ho4XoAnwGFIeAE0BoPCnCQIDIEhSzLJsNnd6Z7prq6q/zdJ28tlv19X32z2Zq+uuLhUr1u3707z4tUQjX99/yEIlOPPCwTC8UFAfBAQHwTEB4Fe/HtvP/5bIBCM/+TZ8+nFtx8gUI0/LxAIxweBePwHj5+CQDn+vEAgHB8ExAcB8UFAfBAQHwTEBwHxxyGYvr8Hkaf4TALimyCYd/7Pzy8nJoFR/OWngpkEgjv/8HMPAWsAWE0CLoP4SwCeEHAZxp8XCITjg0A4/jIcCAR3/jEAEAjFf/Tp63TzZwKBavwlABAIxv/wa/oPAAjE4p8CAAKh+OcAgCBx/FIAIEj2Js+p+LUAQJAs/hoAECSPXwIABInjlwIAQeD4rQCAwFn85Qc6tsavBXAJAZ8xHBC/5navFYBWt4epEUSJvxUACBzGL/2jrxcAEDiJbwUABAni7wUAguDxWwCQRxA5fisAsgi8xPcAQA5BhvitAcggGBm/1ei3BJAKQab4PQCkRpAtfi8AKRF4ih8BQCoEWeP3BpACQeb4FgBCI8ge3wpASAQWz+SpiX+8vvyeXK29CFw9s8jqgUy1E6BmXb96XbQOE+DOm3dFy9ME6IbA+mlctQhKw/YAsBVKr/jNEYx6FNtIBK0BWMdvhmD0c/hqjwKPACzO/S4IPDyEcdQU6AnAavfvRlDyvXo9449E0AqAh/hbEKxOgOUvPxpBdACW8ed1DkDVMTACgdUUaAFg5Ll/KX711+J6QWB5FOwF4GX0744fCUE0AGHie0TQewrsAeBh9DeP7wlBzVEwGsDIW77m8aMgaDEFtgIYPfq7x1dBsAWATHxvCHocBXsBWJ/75vG9IOg1BWoBjNz9w+JHQ2AFQCp+VgRbPxAiGd8TAq8A0sf3gKDlFCgFMGL3u42fCUEJAOI7RrB2a9gSgNUtX5j4oxG0mAJrAKx3f7j4ERC0AED8pAguASB+MARbjoJzACxv+dLEH4lg6xRYA9B796eLHw3BKQDET4igBQDiB0JQOgWOAVic+zLxRyGoOQqWACxGv1x8bwi2ACB+YARrU2AG0Hv0y8cfgWDtKDgG0Gv0E98hgl7fHk78YAhmAMQXQHBqxPc694nvDMHafxn1eHAT8QMiIL4wAuILIWh97hM/EIJTU2DP7id+cATEF0dAfN4nID4IiA8C4oOA+CAgPgiIDwLig4D4wgiIL4yA+MIIiC+MgPjCCIgviuDUIr4wAuILIyC+MALiiyMgvjgC4gsjID4IiA8C4ksjIL4oguXiVeGSu/4C1zNmiXjsI/4AAAAASUVORK5CYII=" alt="Diamond Rush 1v1 logo" width="46" height="46">
+      <span class="brand-copy"><span class="brand-name">DIAMOND RUSH</span><span class="brand-sub">1v1 &middot; V4 LATEST</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-menu" id="site-menu" aria-label="Primary navigation">
+      <a class="nav-link is-active" href="#home" data-section="home">Home</a>
+      <a class="nav-link" href="#features" data-section="features">Features</a>
+      <a class="nav-link" href="#how" data-section="how">How to Play</a>
+      <a class="nav-link" href="#install" data-section="install">Installation</a>
+      <a class="nav-link" href="#download" data-section="download">Download</a>
+      <a class="nav-link nav-link--icon" data-gh href="https://github.com/Alshahriar-07/diamond-rush-minecraft-mod" target="_blank" rel="noopener noreferrer" aria-label="Open the Diamond Rush GitHub repository">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7C5.7.7.6 5.8.6 12.1c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.8-1.4-3.8-1.4-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.6.8.5a11.5 11.5 0 0 0 7.8-10.9C23.4 5.8 18.3.7 12 .7Z"/></svg>
+        GitHub<span class="sr-only"> (opens in a new tab)</span>
+      </a>
+      <a class="nav-link nav-link--icon" data-modrinth href="https://modrinth.com/mod/diamondrush1v1" target="_blank" rel="noopener noreferrer" aria-label="Open the Diamond Rush Modrinth project">
+        <span class="modrinth-mark" aria-hidden="true">M</span>
+        Modrinth<span class="sr-only"> (opens in a new tab)</span>
+      </a>
+    </nav>
   </div>
 </header>
 
-<section id="features"><div class="wrap">
-  <div class="head"><h2>Built for a fast duel</h2><p>Everything a server needs to run short, fair 1v1 matches.</p></div>
-  <div class="grid">
-    <div class="blk card"><h3>GUI-driven arenas</h3><p>Create an arena, invite an opponent, and start the match from the in-game lobby.</p></div>
-    <div class="blk card"><h3>Best-of-three duel</h3><p>Both players progress through three diamond-themed rounds while the server tracks every round win.</p></div>
-    <div class="blk card"><h3>Server authority</h3><p>Loadouts, teleports, objectives, scoring and winner determination all run on the server.</p></div>
-    <div class="blk card"><h3>Dedicated-server handshake</h3><p>V4 adds a client compatibility handshake so automatic menu opening does not depend on join timing.</p></div>
-    <div class="blk card"><h3>Menu recovery</h3><p>If the interface is closed, any compatible player can run <code>/diamondrush on</code> without OP permissions.</p></div>
-    <div class="blk card"><h3>Client and server mod</h3><p>The same JAR belongs on the dedicated server and every participating player's Fabric client.</p></div>
-  </div>
-</div></section>
-
-<section id="how"><div class="wrap">
-  <div class="head"><h2>How a match plays out</h2></div>
-  <ol class="steps">
-    <li class="blk"><b>1</b><h3>Open the menu</h3><p>Join the server and the Diamond Rush interface opens automatically for compatible clients.</p></li>
-    <li class="blk"><b>2</b><h3>Create and invite</h3><p>Create an arena, open Available Players, and invite your opponent.</p></li>
-    <li class="blk"><b>3</b><h3>Accept and start</h3><p>Your opponent accepts in Invitations; the lobby owner starts the best-of-three match.</p></li>
-    <li class="blk"><b>4</b><h3>Win the duel</h3><p>The server runs the rounds, scores and champion screen. First to two round wins takes the match.</p></li>
-  </ol>
-</div></section>
-
-<section id="install"><div class="wrap">
-  <div class="head"><h2>Install</h2><p>Set it up on the server and on both players’ clients.</p></div>
-  <div class="blk box">
-    <div class="req">
-      <div><small>Minecraft</small><strong>Java Edition 26.2</strong></div>
-      <div><small>Fabric Loader</small><strong>0.19.3+</strong></div>
-      <div><small>Fabric API</small><strong>0.154.0+26.2</strong></div>
-      <div><small>Java</small><strong>25 or newer</strong></div>
+<main id="main">
+<section class="hero wrap" id="home" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <div class="eyebrow">
+      <span class="eyebrow__line" aria-hidden="true"></span>
+      <span class="pixel-tag pixel-tag--gold">V4 Latest Release</span>
+      <span class="pixel-tag pixel-tag--live"><span class="dot"></span> Fabric 26.2</span>
     </div>
-    <div class="tabs" role="tablist">
-      <button class="tab" role="tab" aria-selected="true" data-t="srv">Server</button>
-      <button class="tab" role="tab" aria-selected="false" data-t="cli">Player</button>
+    <h1 id="hero-title"><span>DIAMOND RUSH</span><span class="hero-title-accent">1v1<small>V4</small></span></h1>
+    <p class="hero-lead">A competitive Minecraft experience built around three unique diamond challenges.</p>
+    <div class="hero-actions">
+      <a class="pixel-btn pixel-btn--diamond" data-dl href="https://github.com/Alshahriar-07/diamond-rush-minecraft-mod/releases/download/v4/Diamond-Rush-1v1-v4.jar" target="_blank" rel="noopener noreferrer"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAjElEQVR42mNgwAPYOHn/wzADqQCmkX/+HtINQda88/d/0gxB1mz/+NP/H3/+EW8IumZkA/AaghxYyJrRDUA3BG4Qssarf//jxaLbzqIYhNPpyC4AaYJhnF7B5wWCmpENASlAD0SYATA5nDGBKxaIsh1fOoDZTlJigjkXZABBp+NzBbJmsvMDxTkSn2YA5UVJ03q4S0cAAAAASUVORK5CYII=" alt="" width="18" height="18">Download V4</a>
+      <a class="pixel-btn" data-gh href="https://github.com/Alshahriar-07/diamond-rush-minecraft-mod" target="_blank" rel="noopener noreferrer"><span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 .7C5.7.7.6 5.8.6 12.1c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.8-1.4-3.8-1.4-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.6.8.5a11.5 11.5 0 0 0 7.8-10.9C23.4 5.8 18.3.7 12 .7Z"/></svg></span>GitHub</a>
+      <a class="pixel-btn pixel-btn--emerald" data-modrinth href="https://modrinth.com/mod/diamondrush1v1" target="_blank" rel="noopener noreferrer"><span class="modrinth-mark" aria-hidden="true">M</span>Modrinth</a>
     </div>
-    <ol class="list" id="srv">
-      <li>Install Fabric Loader for Minecraft 26.2 and Fabric API on your dedicated server.</li>
-      <li>Download the <a href="https://github.com/Alshahriar-07/diamond-rush-minecraft-mod/releases/download/v4/Diamond-Rush-1v1-v4.jar" target="_blank" rel="noopener noreferrer">V4 JAR</a> and the matching Fabric API JAR.</li>
-      <li>Put both JAR files in the server’s <code>mods</code> folder.</li>
-      <li>Start the server. Every participating player must also install the V4 mod and Fabric API on their client.</li>
-    </ol>
-    <ol class="list" id="cli" hidden>
-      <li>Install Fabric Loader 26.2 and Fabric API for your Minecraft client.</li>
-      <li>Put the V4 JAR and Fabric API in your client’s <code>mods</code> folder.</li>
-      <li>Launch the Fabric 26.2 profile.</li>
-      <li>Join the server; the menu opens for compatible clients. Use <code>/diamondrush on</code> if it is closed.</li>
-    </ol>
-    <p class="note">The mod must be installed on the dedicated server and on every participating player's client. Vanilla clients cannot render the custom Diamond Rush GUI. The same V4 JAR works on both sides.</p>
-  </div>
-</div></section>
-
-<section id="commands"><div class="wrap">
-  <div class="head"><h2>Commands</h2><p>The primary arena flow is GUI-driven. This public recovery command is available to every compatible player.</p></div>
-  <div class="cmds" id="cmds"></div>
-</div></section>
-
-<section><div class="wrap">
-  <div class="blk final">
-    <h2>Ready to rush?</h2>
-    <p>Download Diamond Rush 1v1 V4 and challenge a friend.</p>
-    <div class="row">
-      <a class="btn go" data-dl href="https://github.com/Alshahriar-07/diamond-rush-minecraft-mod/releases/download/v4/Diamond-Rush-1v1-v4.jar" target="_blank" rel="noopener noreferrer">Download V4 .jar</a>
-      <a class="btn" data-gh href="https://github.com/Alshahriar-07/diamond-rush-minecraft-mod" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a class="btn" data-modrinth href="https://modrinth.com/mod/diamondrush1v1" target="_blank" rel="noopener noreferrer">Modrinth</a>
+    <p class="hero-note"><span class="dot"></span> Official V4 build &middot; Server-authoritative &middot; GUI-driven</p>
+    <div class="hero-stats" aria-label="Release requirements">
+      <div class="meta-slot"><small>Platform</small><strong class="cyan">Minecraft 26.2</strong></div>
+      <div class="meta-slot"><small>Loader</small><strong>Fabric</strong></div>
+      <div class="meta-slot"><small>Format</small><strong class="gold">Best of 3</strong></div>
+      <div class="meta-slot"><small>Players</small><strong>1 vs 1</strong></div>
     </div>
   </div>
-</div></section>
+
+  <div class="hero-stage" aria-label="Interactive Diamond Rush interface preview">
+    <span class="block-deco block-deco--one" aria-hidden="true"></span>
+    <span class="block-deco block-deco--two" aria-hidden="true"></span>
+    <div class="hero-console pixel-panel">
+      <div class="console-top">
+        <span><i class="dot dot--cyan"></i> DIAMOND RUSH // LOBBY</span>
+        <span class="console-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>V4.0.0</span>
+      </div>
+      <div class="ore-zone">
+        <div class="ore-stage">
+          <div class="ore-wrap" id="oreWrap">
+            <button id="oreBtn" type="button" aria-label="Mine the diamond ore preview"><canvas id="ore" width="16" height="16"></canvas></button>
+          </div>
+          <div class="ore-label">Diamond ore <strong>Click to mine</strong></div>
+        </div>
+        <div class="console-side">
+          <div class="mini-panel">
+            <small>Round 01 / 03</small>
+            <div class="score-value" aria-live="polite"><span id="count">0</span> / 01</div>
+            <div class="score-sub" id="hint">Five hits per diamond</div>
+            <div class="match-line"><span>P1</span><b>SCORE</b><span>P2</span></div>
+          </div>
+          <div class="mini-panel">
+            <small>Objective</small>
+            <div class="score-sub">Obtain one diamond before your opponent.</div>
+            <div class="match-line"><span class="dot dot--cyan"></span><b>DIAMOND RUSH</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="hotbar" aria-label="Round 1 loadout preview">
+        <div class="hotbar-slot is-selected"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZUlEQVR42mNgoAVg4+T9jw8Tpdn+8SesGKchMImdv/8TxFhdg89WfK7BcAH//D1gjM3ZBL2CrAhmCEmBiUvhjuag/10xFsTHBAyANJGtGQQo0ozN9oHTTLIBZGvGFpUU5URi1AMAy1fr/pb9bN0AAAAASUVORK5CYII=" alt="Diamond pickaxe"></div>
+        <div class="hotbar-slot"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAASUlEQVR42mNgGDSAW1DyPykYqwE7moMI4mgrZfwGHJuViBfT3oCuGAu8mKABIAX4bCfaAJhiGJtkA4aoC2AKCGGcBlCUlAcMAABOCxs5AkV7aAAAAABJRU5ErkJggg==" alt="Crafting table"></div>
+        <div class="hotbar-slot"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAeklEQVR42mNgwAPYOHn/wzADsQBZEwgnFjb+RxcjShMMT16yAYWP1TB0TcjY/vEnsCHoBsEMQ3EBIQOQMYZ3YAag27Tz938MzSi2oxuAbgg2F9DeAGRDBs4AmCEkGYDNEGzpgGCKxGYAQc24DAEZQLRmfC6hOFfi0gwAUDB74OW82HQAAAAASUVORK5CYII=" alt="Shield"></div>
+        <div class="hotbar-slot"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAfklEQVR42mNgoAcI3en3n42T9z+IhmGiNYM0ImsGsUnWfDJc/v/zKr3/31b6/IeJEa0ZpAmmGUSDMEwOp0HoNqMbgGwQTs0gBchOx6YZwwCyNSP7iZBmrE6HaUTWTLbT8WnGGXDohuDTjDcNYHMJ0ZoJGUJWEibZdmyGENIMADJmEcXuTHYMAAAAAElFTkSuQmCC" alt="Carrots"></div>
+        <div class="hotbar-slot"></div><div class="hotbar-slot"></div><div class="hotbar-slot"></div><div class="hotbar-slot"></div><div class="hotbar-slot"></div>
+      </div>
+      <div class="hero-footer"><span><span class="dot"></span> Interactive preview</span><code>1v1 / best of three</code></div>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="features" aria-labelledby="features-title">
+  <div class="section-head">
+    <div class="section-heading">
+      <div class="kicker">01 &middot; Feature inventory</div>
+      <h2 id="features-title">BUILT FOR THE <em>RUSH</em></h2>
+      <p>Two players. Three diamond challenges. A complete in-game flow that keeps the match moving without command lists.</p>
+    </div>
+    <p class="section-aside"><strong>Verified V4 flow</strong>Every feature below is part of the current mod implementation.</p>
+  </div>
+  <div class="feature-grid">
+    <article class="feature-card pixel-panel reveal">
+      <div class="card-top"><span class="card-num">01</span><span class="card-tag">Core</span></div>
+      <div class="feature-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAd0lEQVR42mNgGDSAjZP3PzImVi2KoP3jT2CMzxCcapANwGUIXnmYAC5F2MQxXInLEFyasXoTmyFEa8ZmyI8//0jTjC3AiIkdBnyhTZIhuPyM15CVZWr/YRhXgMEMQVYLNwTdAGwBBmMTNABfaOM0AFtmwhVQ6GoAL1YgCmt+4cgAAAAASUVORK5CYII=" alt="" width="34" height="34"></div>
+      <h3>Competitive 1v1 Matches</h3>
+      <p>Two players enter one arena and race through a server-controlled duel. Only match competitors can damage each other while a round is active.</p>
+    </article>
+    <article class="feature-card pixel-panel reveal">
+      <div class="card-top"><span class="card-num">02</span><span class="card-tag">Core</span></div>
+      <div class="feature-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAASUlEQVR42mNgGLSAf/6e/+iYJI32jz9hYIIG4dNMlCHImrHJIxtCUPPO3///I2OChmCzHV3zEDOA5DCgOBaokg4oTolUyQukAgAvXDQQsIgTZgAAAABJRU5ErkJggg==" alt="" width="34" height="34"></div>
+      <h3>Three Diamond Challenges</h3>
+      <p>Obtain a diamond, mine two more, then craft a diamond pickaxe. Every round changes the objective and the starting loadout.</p>
+    </article>
+    <article class="feature-card pixel-panel reveal">
+      <div class="card-top"><span class="card-num">03</span><span class="card-tag">V4 UI</span></div>
+      <div class="feature-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZklEQVR42mNgwAPYOHn/wzAD3QGy7SS5AqY4sbARjHf+/g9nEzQIXTM2jNcQdM2Tl2yAY3RDiNKM7H+chiArQtds//gTHKMbAvcKxQZg8wKxBlAnDKgWC1RJB4QMIStJU5QjidEMAGhNHXNgSg5mAAAAAElFTkSuQmCC" alt="" width="34" height="34"></div>
+      <h3>Custom Main Menu</h3>
+      <p>A GUI-driven lobby replaces command lists. Create arenas, browse available players and manage invitations from one interface.</p>
+    </article>
+    <article class="feature-card pixel-panel reveal">
+      <div class="card-top"><span class="card-num">04</span><span class="card-tag">Arena</span></div>
+      <div class="feature-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAV0lEQVR42mNgoBZg4+T9TyrGMCCxsJFojNWAyUs2gDE+jTA1eA3g8Yragoy/Xc6Ci5FlADImyQD50/fheAgasPP3///oeAiGAcXRSLIBWDMJnkxHlVwMAPyOWAguzUXJAAAAAElFTkSuQmCC" alt="" width="34" height="34"></div>
+      <h3>Arena Creation</h3>
+      <p>Create and manage an arena from the main menu, then open its lobby to invite a rival and control the start of the match.</p>
+    </article>
+    <article class="feature-card pixel-panel reveal">
+      <div class="card-top"><span class="card-num">05</span><span class="card-tag">Social</span></div>
+      <div class="feature-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAeElEQVR42mNgoBdg4+T9j45JNsD5xvT/olWhYJpsA2AYxQBszsOGcboAxOGfv+e/jI4FTow3DEAckCKQIYQMgqnBagCyIlyakV2E0wCYYvvHn8BsEI1uKEEDYJphGmF8ggaAFKIrxiaH1QBcGrEZRFY6oCgpD14AALsv4LYLUWfBAAAAAElFTkSuQmCC" alt="" width="34" height="34"></div>
+      <h3>Player Invitations</h3>
+      <p>Invite an available player and accept or decline incoming invitations from the dedicated Invitations screen.</p>
+    </article>
+    <article class="feature-card pixel-panel reveal">
+      <div class="card-top"><span class="card-num">06</span><span class="card-tag">Live</span></div>
+      <div class="feature-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAASUlEQVR42mNgGBSAjZP3PzkYxYDEwkaSMFYDVDyiiMI4DRCSVScK4zVg8pINWDHRBlDsAucb0/Fi2ruAkP9p6wKKEhJFSXlAAQCEuxz76dLL4wAAAABJRU5ErkJggg==" alt="" width="34" height="34"></div>
+      <h3>Live Match Scoreboard</h3>
+      <p>The in-game scoreboard tracks both players, the current round and the active objective as the match unfolds.</p>
+    </article>
+    <article class="feature-card pixel-panel reveal">
+      <div class="card-top"><span class="card-num">07</span><span class="card-tag">Flow</span></div>
+      <div class="feature-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAP0lEQVR42mNgGJSAjZP3PwyTZYD940//QZhsQ2AGUM0QmEEDYwhI0+AwhCIDyI4VbIFIf81kJWuKNKNnJkKaAQWKlf1RaIJyAAAAAElFTkSuQmCC" alt="" width="34" height="34"></div>
+      <h3>Automatic Round Progression</h3>
+      <p>The server runs countdowns, restores loadouts, advances rounds and crowns the first player to two round wins.</p>
+    </article>
+    <article class="feature-card pixel-panel reveal">
+      <div class="card-top"><span class="card-num">08</span><span class="card-tag">Server</span></div>
+      <div class="feature-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAUElEQVR42mNgGLTA+cb0PHRMtkaiDUJW9OPPv/8gDGQjY/yGoGvGZwjRmrEYgN0QqhkAUkBAM2EDiMA0MIAEQwhHIx5DSEtMJKdEquQFUgEAAuNiBQkovmkAAAAASUVORK5CYII=" alt="" width="34" height="34"></div>
+      <h3>Dedicated Server Support</h3>
+      <p>Runs on Fabric dedicated servers. V4&rsquo;s client handshake opens the menu when the play channel is ready, with <code>/diamondrush on</code> as a recovery command.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section wrap" id="how" aria-labelledby="rounds-title">
+  <div class="section-head">
+    <div class="section-heading">
+      <div class="kicker">02 &middot; Match structure</div>
+      <h2 id="rounds-title">THREE ROUNDS. ONE <em>WINNER</em>.</h2>
+      <p>Each round tests a different part of the diamond loop. The server resets the arena, inventory and objective between rounds.</p>
+    </div>
+    <p class="section-aside"><strong>Best of three</strong>The first player to win two rounds takes the match. Round three only happens at 1&ndash;1.</p>
+  </div>
+  <div class="round-list">
+    <article class="round-card pixel-panel reveal" data-round="01">
+      <div class="round-index"><b>01</b><span>Round</span></div>
+      <div class="round-copy">
+        <div class="round-kicker">Diamond Rush</div>
+        <h3>First diamond wins.</h3>
+        <p>Be the first player to legitimately obtain one diamond. A valid ore must be mined and the diamond collected&mdash;picking up someone else&rsquo;s drop does not count.</p>
+        <div class="loadout" aria-label="Round 1 loadout">
+          <div class="loot-item"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZUlEQVR42mNgoAVg4+T9jw8Tpdn+8SesGKchMImdv/8TxFhdg89WfK7BcAH//D1gjM3ZBL2CrAhmCEmBiUvhjuag/10xFsTHBAyANJGtGQQo0ozN9oHTTLIBZGvGFpUU5URi1AMAy1fr/pb9bN0AAAAASUVORK5CYII=" alt=""><span>Diamond Pickaxe</span></div>
+          <div class="loot-item"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAASUlEQVR42mNgGDSAW1DyPykYqwE7moMI4mgrZfwGHJuViBfT3oCuGAu8mKABIAX4bCfaAJhiGJtkA4aoC2AKCGGcBlCUlAcMAABOCxs5AkV7aAAAAABJRU5ErkJggg==" alt=""><span>Crafting Table</span></div>
+          <div class="loot-item"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAeklEQVR42mNgwAPYOHn/wzADsQBZEwgnFjb+RxcjShMMT16yAYWP1TB0TcjY/vEnsCHoBsEMQ3EBIQOQMYZ3YAag27Tz938MzSi2oxuAbgg2F9DeAGRDBs4AmCEkGYDNEGzpgGCKxGYAQc24DAEZQLRmfC6hOFfi0gwAUDB74OW82HQAAAAASUVORK5CYII=" alt=""><span>Shield</span></div>
+          <div class="loot-item"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAfklEQVR42mNgoAcI3en3n42T9z+IhmGiNYM0ImsGsUnWfDJc/v/zKr3/31b6/IeJEa0ZpAmmGUSDMEwOp0HoNqMbgGwQTs0gBchOx6YZwwCyNSP7iZBmrE6HaUTWTLbT8WnGGXDohuDTjDcNYHMJ0ZoJGUJWEibZdmyGENIMADJmEcXuTHYMAAAAAElFTkSuQmCC" alt=""><span>Carrots &times;32</span></div>
+        </div>
+      </div>
+      <div class="round-art"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAjElEQVR42mNgwAPYOHn/wzADqQCmkX/+HtINQda88/d/0gxB1mz/+NP/H3/+EW8IumZkA/AaghxYyJrRDUA3BG4Qssarf//jxaLbzqIYhNPpyC4AaYJhnF7B5wWCmpENASlAD0SYATA5nDGBKxaIsh1fOoDZTlJigjkXZABBp+NzBbJmsvMDxTkSn2YA5UVJ03q4S0cAAAAASUVORK5CYII=" alt="Diamond item"></div>
+    </article>
+    <article class="round-card pixel-panel reveal" data-round="02">
+      <div class="round-index"><b>02</b><span>Round</span></div>
+      <div class="round-copy">
+        <div class="round-kicker">Diamond Miner</div>
+        <h3>Two diamonds. One claim.</h3>
+        <p>Mine and obtain two diamonds from diamond ore before your opponent. The stone pickaxe can break the seeded vein, but the drops still have to be collected.</p>
+        <div class="loadout" aria-label="Round 2 loadout">
+          <div class="loot-item"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZElEQVR42mNgoAVg4+T9jw8TpbmmtRcrxmkITGLdjn0EMVbX4LMVn2swXBAQlQTG2JxN0CvIimCGkBSYuBTuaA763xVjQXxMwABIE9maQYAizdhsHzjNJBtAtmZsUUlRTiRGPQDxy9e7HkqJYAAAAABJRU5ErkJggg==" alt=""><span>Stone Pickaxe</span></div>
+          <div class="loot-item"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAASUlEQVR42mNgGDSAW1DyPykYqwE7moMI4mgrZfwGHJuViBfT3oCuGAu8mKABIAX4bCfaAJhiGJtkA4aoC2AKCGGcBlCUlAcMAABOCxs5AkV7aAAAAABJRU5ErkJggg==" alt=""><span>Crafting Table</span></div>
+          <div class="loot-item"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAeklEQVR42mNgoDZg4+T9TyzGqXl2gilBjGEAsZpPtnvBDYAbgqwZpAAZ//+wBYON4Qpkm5EVwzQgs5ENAGGsBiArxoaJcgHRBqAHHjEGIAckA3rI47MRa1QSG30J1soYmrFGIzaN6JpxJiRiNFKcEnEaQGpGwmoAOQAAAl6NfFP67UYAAAAASUVORK5CYII=" alt=""><span>Bread &times;16</span></div>
+        </div>
+      </div>
+      <div class="round-art"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZElEQVR42mNgoAVg4+T9jw8TpbmmtRcrxmkITGLdjn0EMVbX4LMVn2swXBAQlQTG2JxN0CvIimCGkBSYuBTuaA763xVjQXxMwABIE9maQYAizdhsHzjNJBtAtmZsUUlRTiRGPQDxy9e7HkqJYAAAAABJRU5ErkJggg==" alt="Stone pickaxe item"></div>
+    </article>
+    <article class="round-card pixel-panel reveal" data-round="03">
+      <div class="round-index"><b>03</b><span>Round</span></div>
+      <div class="round-copy">
+        <div class="round-kicker">Diamond Crafter</div>
+        <h3>Craft the winning pickaxe.</h3>
+        <p>Be the first player to legitimately craft a Diamond Pickaxe. Start empty and use the crafting table and supply cache beside your spawn.</p>
+        <div class="loadout" aria-label="Round 3 starting state">
+          <div class="loot-empty">Empty inventory &middot; crafting table and supply cache supplied in the arena</div>
+        </div>
+      </div>
+      <div class="round-art"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZUlEQVR42mNgoAVg4+T9jw8Tpdn+8SesGKchMImdv/8TxFhdg89WfK7BcAH//D1gjM3ZBL2CrAhmCEmBiUvhjuag/10xFsTHBAyANJGtGQQo0ozN9oHTTLIBZGvGFpUU5URi1AMAy1fr/pb9bN0AAAAASUVORK5CYII=" alt="Diamond pickaxe item"></div>
+    </article>
+  </div>
+</section>
+
+<section class="section wrap" id="gallery" aria-labelledby="lobby-title">
+  <div class="section-head">
+    <div class="section-heading">
+      <div class="kicker">03 &middot; Interface showcase</div>
+      <h2 id="lobby-title">STEP INSIDE THE <em>LOBBY</em>.</h2>
+      <p>No in-game screenshots are included in the current release repository. This interface preview recreates the shipped V4 menu structure&mdash;it is a layout preview, not gameplay footage.</p>
+    </div>
+    <p class="section-aside"><strong>GUI-driven</strong>Arena creation, available players, invitations and the match lobby are all handled in-game.</p>
+  </div>
+  <div class="showcase-shell pixel-panel reveal">
+    <div class="showcase-topbar"><span><i class="dot dot--cyan"></i> DIAMOND RUSH // V4 MAIN MENU</span><span><b>LAYOUT PREVIEW</b> &middot; NOT GAMEPLAY</span></div>
+    <div class="menu-preview" aria-label="Preview of the V4 main menu layout">
+      <div class="menu-sidebar">
+        <div class="menu-brand"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAD4ElEQVR42u3doY4UQRCH8VMk5CAEBwKFQqDQhPdB8ho4XoAnwGFIeAE0BoPCnCQIDIEhSzLJsNnd6Z7prq6q/zdJ28tlv19X32z2Zq+uuLhUr1u3707z4tUQjX99/yEIlOPPCwTC8UFAfBAQHwTEB4Fe/HtvP/5bIBCM/+TZ8+nFtx8gUI0/LxAIxweBePwHj5+CQDn+vEAgHB8ExAcB8UFAfBAQHwTEBwHxxyGYvr8Hkaf4TALimyCYd/7Pzy8nJoFR/OWngpkEgjv/8HMPAWsAWE0CLoP4SwCeEHAZxp8XCITjg0A4/jIcCAR3/jEAEAjFf/Tp63TzZwKBavwlABAIxv/wa/oPAAjE4p8CAAKh+OcAgCBx/FIAIEj2Js+p+LUAQJAs/hoAECSPXwIABInjlwIAQeD4rQCAwFn85Qc6tsavBXAJAZ8xHBC/5navFYBWt4epEUSJvxUACBzGL/2jrxcAEDiJbwUABAni7wUAguDxWwCQRxA5fisAsgi8xPcAQA5BhvitAcggGBm/1ei3BJAKQab4PQCkRpAtfi8AKRF4ih8BQCoEWeP3BpACQeb4FgBCI8ge3wpASAQWz+SpiX+8vvyeXK29CFw9s8jqgUy1E6BmXb96XbQOE+DOm3dFy9ME6IbA+mlctQhKw/YAsBVKr/jNEYx6FNtIBK0BWMdvhmD0c/hqjwKPACzO/S4IPDyEcdQU6AnAavfvRlDyvXo9449E0AqAh/hbEKxOgOUvPxpBdACW8ed1DkDVMTACgdUUaAFg5Ll/KX711+J6QWB5FOwF4GX0744fCUE0AGHie0TQewrsAeBh9DeP7wlBzVEwGsDIW77m8aMgaDEFtgIYPfq7x1dBsAWATHxvCHocBXsBWJ/75vG9IOg1BWoBjNz9w+JHQ2AFQCp+VgRbPxAiGd8TAq8A0sf3gKDlFCgFMGL3u42fCUEJAOI7RrB2a9gSgNUtX5j4oxG0mAJrAKx3f7j4ERC0AED8pAguASB+MARbjoJzACxv+dLEH4lg6xRYA9B796eLHw3BKQDET4igBQDiB0JQOgWOAVic+zLxRyGoOQqWACxGv1x8bwi2ACB+YARrU2AG0Hv0y8cfgWDtKDgG0Gv0E98hgl7fHk78YAhmAMQXQHBqxPc694nvDMHafxn1eHAT8QMiIL4wAuILIWh97hM/EIJTU2DP7id+cATEF0dAfN4nID4IiA8C4oOA+CAgPgiIDwLig4D4wgiIL4yA+MIIiC+MgPjCCIgviuDUIr4wAuILIyC+MALiiyMgvjgC4gsjID4IiA8C4ksjIL4oguXiVeGSu/4C1zNmiXjsI/4AAAAASUVORK5CYII=" alt="" width="35" height="35"><div><strong>DIAMOND RUSH</strong><small>1v1 / V4</small></div></div>
+        <div class="menu-nav">
+          <div class="menu-nav-row is-active"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAV0lEQVR42mNgoBZg4+T9TyrGMCCxsJFojNWAyUs2gDE+jTA1eA3g8Yragoy/Xc6Ci5FlADImyQD50/fheAgasPP3///oeAiGAcXRSLIBWDMJnkxHlVwMAPyOWAguzUXJAAAAAElFTkSuQmCC" alt="">Create Arena</div>
+          <div class="menu-nav-row"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAXklEQVR42mNgGJSAjZP3PwyTpXnykg1wDDOEKEPRNSMbsvXYBTjGaQjMAPvHn3BqxmsINheQZACuMCDJAGwBRnQYkB21IMHEwka8mKCTcWnCFq3I6WMQGUAOpkrGAwA8jSCCTx7P0gAAAABJRU5ErkJggg==" alt="">Available Players</div>
+          <div class="menu-nav-row"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAeElEQVR42mNgoBdg4+T9j45JNsD5xvT/olWhYJpsA2AYxQBszsOGcboAxOGfv+e/jI4FTow3DEAckCKQIYQMgqnBagCyIlyakV2E0wCYYvvHn8BsEI1uKEEDYJphGmF8ggaAFKIrxiaH1QBcGrEZRFY6oCgpD14AALsv4LYLUWfBAAAAAElFTkSuQmCC" alt="">Invitations<span class="menu-count">2</span></div>
+          <div class="menu-nav-row"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZElEQVR42mNgGDSAjZP3P6kYqwEBUUkEMYZmmAEwSQllXax48pIN2G1HNgCfZvvHnwi7AF3jzt//4ZpBfJIMAGmCYZgYWQYgi9HPAJi/yTIAOdDQMUED8GkmygCKUiLZ+YASAAAoIwV0YL0i/QAAAABJRU5ErkJggg==" alt="">My Arena</div>
+        </div>
+      </div>
+      <div class="menu-content">
+        <div class="menu-title-row">
+          <div><h3>MAIN MENU</h3><p>Choose an action to begin your duel.</p></div>
+          <span class="live-pill"><span class="dot"></span> CONNECTED</span>
+        </div>
+        <div class="menu-tile-grid">
+          <div class="menu-tile"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAV0lEQVR42mNgoBZg4+T9TyrGMCCxsJFojNWAyUs2gDE+jTA1eA3g8Yragoy/Xc6Ci5FlADImyQD50/fheAgasPP3///oeAiGAcXRSLIBWDMJnkxHlVwMAPyOWAguzUXJAAAAAElFTkSuQmCC" alt=""><div><b>Create Arena</b><small>Open a new duel lobby</small></div></div>
+          <div class="menu-tile"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAXklEQVR42mNgGJSAjZP3PwyTpXnykg1wDDOEKEPRNSMbsvXYBTjGaQjMAPvHn3BqxmsINheQZACuMCDJAGwBRnQYkB21IMHEwka8mKCTcWnCFq3I6WMQGUAOpkrGAwA8jSCCTx7P0gAAAABJRU5ErkJggg==" alt=""><div><b>Available Players</b><small>Find your next rival</small></div></div>
+          <div class="menu-tile"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAeElEQVR42mNgoBdg4+T9j45JNsD5xvT/olWhYJpsA2AYxQBszsOGcboAxOGfv+e/jI4FTow3DEAckCKQIYQMgqnBagCyIlyakV2E0wCYYvvHn8BsEI1uKEEDYJphGmF8ggaAFKIrxiaH1QBcGrEZRFY6oCgpD14AALsv4LYLUWfBAAAAAElFTkSuQmCC" alt=""><div><b>Invitations</b><small>Accept or decline</small></div></div>
+          <div class="menu-tile"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZElEQVR42mNgGDSAjZP3P6kYqwEBUUkEMYZmmAEwSQllXax48pIN2G1HNgCfZvvHnwi7AF3jzt//4ZpBfJIMAGmCYZgYWQYgi9HPAJi/yTIAOdDQMUED8GkmygCKUiLZ+YASAAAoIwV0YL0i/QAAAABJRU5ErkJggg==" alt=""><div><b>My Arena</b><small>Manage your match</small></div></div>
+        </div>
+        <div class="menu-hud">
+          <div class="menu-hud-head"><span>MATCH HUD PREVIEW</span><b>ROUND 1 / 3</b></div>
+          <div class="menu-hud-grid">
+            <div class="menu-hud-player"><strong>PLAYER ONE</strong><span>0</span></div>
+            <div class="menu-hud-vs">VS</div>
+            <div class="menu-hud-player"><strong>PLAYER TWO</strong><span>0</span></div>
+            <div class="menu-hud-objective">Current objective: <b>Obtain a Diamond</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="showcase-note"><strong>NOTE</strong><span>This panel is a structural recreation of the V4 menu and HUD layout. It does not depict an actual match or claim to be a game screenshot.</span></p>
+  </div>
+</section>
+
+<section class="section wrap" id="install" aria-labelledby="install-title">
+  <div class="section-head">
+    <div class="section-heading">
+      <div class="kicker">04 &middot; Installation guide</div>
+      <h2 id="install-title">FROM DOWNLOAD TO <em>FIRST MATCH</em>.</h2>
+      <p>Set up the dedicated server first, then install the same V4 build on every participating player&rsquo;s client. Vanilla clients cannot render the custom interface.</p>
+    </div>
+    <p class="section-aside"><strong>Both sides required</strong>The mod belongs on the dedicated server and every participating player&rsquo;s Fabric client.</p>
+  </div>
+  <div class="install-grid">
+    <aside class="install-side pixel-panel">
+      <h3>REQUIRED SETUP</h3>
+      <div class="req-grid">
+        <div class="req-slot"><small>Minecraft</small><strong class="cyan">Java Edition 26.2</strong></div>
+        <div class="req-slot"><small>Fabric Loader</small><strong>0.19.3+</strong></div>
+        <div class="req-slot"><small>Fabric API</small><strong>0.154.0+26.2</strong></div>
+        <div class="req-slot"><small>Java</small><strong class="gold">25 or newer</strong></div>
+      </div>
+      <div class="install-note"><strong>Same JAR on both sides.</strong> Install Diamond Rush V4 on the dedicated server and on every player&rsquo;s client. A vanilla client cannot see the Diamond Rush menu or HUD.</div>
+    </aside>
+    <div class="install-panel pixel-panel">
+      <h3>INSTALLATION STEPS</h3>
+      <div class="install-tabs" role="tablist" aria-label="Choose install target">
+        <button class="install-tab" type="button" role="tab" aria-selected="true" aria-controls="srv" id="tab-srv" data-target="srv">Dedicated Server</button>
+        <button class="install-tab" type="button" role="tab" aria-selected="false" aria-controls="cli" id="tab-cli" data-target="cli">Player Client</button>
+      </div>
+      <ol class="quest-list" id="srv" role="tabpanel" aria-labelledby="tab-srv">
+        <li class="quest-item"><span class="quest-num">1</span><div><h4>Install Minecraft 26.2</h4><p>Set up a Java Edition 26.2 dedicated server.</p></div></li>
+        <li class="quest-item"><span class="quest-num">2</span><div><h4>Install Fabric Loader</h4><p>Install Fabric Loader 0.19.3 or newer for Minecraft 26.2.</p></div></li>
+        <li class="quest-item"><span class="quest-num">3</span><div><h4>Add Fabric API</h4><p>Use Fabric API <code>0.154.0+26.2</code> or the matching 26.2 build.</p></div></li>
+        <li class="quest-item"><span class="quest-num">4</span><div><h4>Download Diamond Rush V4</h4><p>Get the official <code>Diamond-Rush-1v1-v4.jar</code> from the release section below.</p></div></li>
+        <li class="quest-item"><span class="quest-num">5</span><div><h4>Place both JARs in mods</h4><p>Put Fabric API and the Diamond Rush V4 JAR in the server&rsquo;s <code>mods/</code> folder.</p></div></li>
+        <li class="quest-item"><span class="quest-num">6</span><div><h4>Start and equip clients</h4><p>Start the server, then install the same V4 JAR and Fabric API on every participating player&rsquo;s client before they join.</p></div></li>
+      </ol>
+      <ol class="quest-list" id="cli" role="tabpanel" aria-labelledby="tab-cli" hidden>
+        <li class="quest-item"><span class="quest-num">1</span><div><h4>Install Minecraft 26.2</h4><p>Use Minecraft Java Edition 26.2 on your player client.</p></div></li>
+        <li class="quest-item"><span class="quest-num">2</span><div><h4>Install Fabric Loader</h4><p>Install Fabric Loader 0.19.3 or newer and create the 26.2 profile.</p></div></li>
+        <li class="quest-item"><span class="quest-num">3</span><div><h4>Add Fabric API</h4><p>Install Fabric API <code>0.154.0+26.2</code> or the matching 26.2 build.</p></div></li>
+        <li class="quest-item"><span class="quest-num">4</span><div><h4>Download Diamond Rush V4</h4><p>Download the official V4 JAR from the release panel below.</p></div></li>
+        <li class="quest-item"><span class="quest-num">5</span><div><h4>Place both JARs in mods</h4><p>Put Fabric API and Diamond Rush V4 in your client&rsquo;s <code>mods/</code> folder, then launch the Fabric 26.2 profile.</p></div></li>
+        <li class="quest-item"><span class="quest-num">6</span><div><h4>Join the server</h4><p>The menu opens automatically for compatible clients. If it is closed, run <code>/diamondrush on</code>.</p></div></li>
+      </ol>
+      <div class="install-footer"><span>Java 25+ is required on both server and client.</span><button class="command-chip" type="button" data-copy="/diamondrush on"><code>/diamondrush on</code><em>Copy</em></button></div>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="download" aria-labelledby="download-title">
+  <div class="download-panel pixel-panel reveal">
+    <div class="download-copy">
+      <div class="download-kicker"><span class="pixel-tag pixel-tag--gold">Latest Version: V4</span><span class="pixel-tag pixel-tag--live"><span class="dot"></span> Official release</span></div>
+      <h2 class="download-title" id="download-title">GET <span>DIAMOND RUSH 1v1</span> V4</h2>
+      <p class="download-lead">The latest server-authoritative build, ready for a dedicated Fabric server and every participating player&rsquo;s client.</p>
+      <div class="download-file"><span>FILE</span><code>Diamond-Rush-1v1-v4.jar</code><span>&middot;</span><span>Minecraft 26.2</span></div>
+      <div class="download-actions">
+        <a class="pixel-btn pixel-btn--diamond" data-dl href="https://github.com/Alshahriar-07/diamond-rush-minecraft-mod/releases/download/v4/Diamond-Rush-1v1-v4.jar" target="_blank" rel="noopener noreferrer"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAjElEQVR42mNgwAPYOHn/wzADqQCmkX/+HtINQda88/d/0gxB1mz/+NP/H3/+EW8IumZkA/AaghxYyJrRDUA3BG4Qssarf//jxaLbzqIYhNPpyC4AaYJhnF7B5wWCmpENASlAD0SYATA5nDGBKxaIsh1fOoDZTlJigjkXZABBp+NzBbJmsvMDxTkSn2YA5UVJ03q4S0cAAAAASUVORK5CYII=" alt="" width="18" height="18">Download V4</a>
+        <a class="pixel-btn" data-gh href="https://github.com/Alshahriar-07/diamond-rush-minecraft-mod" target="_blank" rel="noopener noreferrer"><span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 .7C5.7.7.6 5.8.6 12.1c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.8-1.4-3.8-1.4-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.6.8.5a11.5 11.5 0 0 0 7.8-10.9C23.4 5.8 18.3.7 12 .7Z"/></svg></span>GitHub Repository</a>
+        <a class="pixel-btn pixel-btn--emerald" data-modrinth href="https://modrinth.com/mod/diamondrush1v1" target="_blank" rel="noopener noreferrer"><span class="modrinth-mark" aria-hidden="true">M</span>View on Modrinth</a>
+      </div>
+      <div class="download-meta"><span class="pixel-tag">Fabric</span><span class="pixel-tag">Java 25+</span><span class="pixel-tag">Server + client</span></div>
+    </div>
+    <div class="download-side">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAD4ElEQVR42u3doY4UQRCH8VMk5CAEBwKFQqDQhPdB8ho4XoAnwGFIeAE0BoPCnCQIDIEhSzLJsNnd6Z7prq6q/zdJ28tlv19X32z2Zq+uuLhUr1u3707z4tUQjX99/yEIlOPPCwTC8UFAfBAQHwTEB4Fe/HtvP/5bIBCM/+TZ8+nFtx8gUI0/LxAIxweBePwHj5+CQDn+vEAgHB8ExAcB8UFAfBAQHwTEBwHxxyGYvr8Hkaf4TALimyCYd/7Pzy8nJoFR/OWngpkEgjv/8HMPAWsAWE0CLoP4SwCeEHAZxp8XCITjg0A4/jIcCAR3/jEAEAjFf/Tp63TzZwKBavwlABAIxv/wa/oPAAjE4p8CAAKh+OcAgCBx/FIAIEj2Js+p+LUAQJAs/hoAECSPXwIABInjlwIAQeD4rQCAwFn85Qc6tsavBXAJAZ8xHBC/5navFYBWt4epEUSJvxUACBzGL/2jrxcAEDiJbwUABAni7wUAguDxWwCQRxA5fisAsgi8xPcAQA5BhvitAcggGBm/1ei3BJAKQab4PQCkRpAtfi8AKRF4ih8BQCoEWeP3BpACQeb4FgBCI8ge3wpASAQWz+SpiX+8vvyeXK29CFw9s8jqgUy1E6BmXb96XbQOE+DOm3dFy9ME6IbA+mlctQhKw/YAsBVKr/jNEYx6FNtIBK0BWMdvhmD0c/hqjwKPACzO/S4IPDyEcdQU6AnAavfvRlDyvXo9449E0AqAh/hbEKxOgOUvPxpBdACW8ed1DkDVMTACgdUUaAFg5Ll/KX711+J6QWB5FOwF4GX0744fCUE0AGHie0TQewrsAeBh9DeP7wlBzVEwGsDIW77m8aMgaDEFtgIYPfq7x1dBsAWATHxvCHocBXsBWJ/75vG9IOg1BWoBjNz9w+JHQ2AFQCp+VgRbPxAiGd8TAq8A0sf3gKDlFCgFMGL3u42fCUEJAOI7RrB2a9gSgNUtX5j4oxG0mAJrAKx3f7j4ERC0AED8pAguASB+MARbjoJzACxv+dLEH4lg6xRYA9B796eLHw3BKQDET4igBQDiB0JQOgWOAVic+zLxRyGoOQqWACxGv1x8bwi2ACB+YARrU2AG0Hv0y8cfgWDtKDgG0Gv0E98hgl7fHk78YAhmAMQXQHBqxPc694nvDMHafxn1eHAT8QMiIL4wAuILIWh97hM/EIJTU2DP7id+cATEF0dAfN4nID4IiA8C4oOA+CAgPgiIDwLig4D4wgiIL4yA+MIIiC+MgPjCCIgviuDUIr4wAuILIyC+MALiiyMgvjgC4gsjID4IiA8C4ksjIL4oguXiVeGSu/4C1zNmiXjsI/4AAAAASUVORK5CYII=" alt="Diamond Rush 1v1 logo" width="94" height="94">
+      <div class="version-big">V4</div>
+      <div class="side-rule"></div>
+      <div class="side-status"><span class="dot"></span> Latest release</div>
+      <p>Version 4.0.0<br>Minecraft 26.2 / Fabric</p>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="credits" aria-labelledby="credits-title">
+  <div class="section-head">
+    <div class="section-heading">
+      <div class="kicker">05 &middot; Behind the block</div>
+      <h2 id="credits-title">DEVELOPER &amp; <em>STUDIO</em>.</h2>
+    </div>
+  </div>
+  <div class="credits-grid">
+    <article class="credit-card pixel-panel reveal">
+      <div class="credit-role">Developer</div>
+      <h3>AL SHAHRIAR SOWAN</h3>
+      <p>Creator and developer of Diamond Rush 1v1.</p>
+      <div class="credit-foot"><span class="credit-mark"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAYElEQVR42mNgoBVg4+T9j45J0mj/+BMGJmgQLo3YDCKoWcTKC4zR2TgNQTYApoF//h4wH0SjG4JiAC7NyAbgNQTdAGQNuMRwGkAKpo0LyAoDimOBKumA4pRIlbxATm4EAJ3LlKvZc6bJAAAAAElFTkSuQmCC" alt="" width="29" height="29">Portfolio</span><a class="credit-link" href="https://alshahriarsayon.vercel.app/" target="_blank" rel="noopener noreferrer">Visit portfolio <span aria-hidden="true">&nearr;</span></a></div>
+    </article>
+    <article class="credit-card pixel-panel reveal">
+      <div class="credit-role">Studio</div>
+      <h3>EAGOX STUDIO</h3>
+      <p>Independent game development studio. Explore more work from Eagox Studio.</p>
+      <div class="credit-foot"><span class="credit-mark"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA/klEQVR42mNgoACwcfL+h2EGegOYxdyCkvR1BLKvQZbDMM1DA5fF6JjqDiFksaaxLW0cQozFILyyTA2MqeYQYi2GYSlVfeo4hByL0TFFDqHEYnIdgtcByJZ+u5wFx/8/bCEKE3II0Q4AGQSzGNkhhDCuECHbAaRidAdQHALYDMaF7R9/AuNRB9DEAcSkfmzZkmoOICXxDU8HEJsGhq8D6F4QodcFpDgA2Qz++XvAmGgHIDuEHAfgshivA3C1B8ipjvFZTFTDhFDbgFSLSWq+kxMaMIuxNUDIbqASExr4LKZKp4XY0KBb/wBfp4Rqvia3yU63ziq+viHde8eU+hoAIpy1mbGET34AAAAASUVORK5CYII=" alt="Eagox Studio mark" width="29" height="29">Eagox Studio</span><a class="credit-link" href="https://eagoxstudio.vercel.app/" target="_blank" rel="noopener noreferrer">Studio website <span aria-hidden="true">&nearr;</span></a></div>
+    </article>
+  </div>
+</section>
 </main>
 
-<footer><div class="wrap foot">
-  <span>Diamond Rush 1v1 V4 for Minecraft 26.2 on Fabric</span>
-  <span><a data-gh href="https://github.com/Alshahriar-07/diamond-rush-minecraft-mod" target="_blank" rel="noopener noreferrer">GitHub</a> &nbsp; <a data-modrinth href="https://modrinth.com/mod/diamondrush1v1" target="_blank" rel="noopener noreferrer">Modrinth</a> &nbsp; <a href="#install">Install</a></span>
-  <span>© 2026 Diamond Rush 1v1</span>
-</div></footer>
-<div id="toast" role="status"></div>
+<footer class="site-footer">
+  <div class="wrap footer-main">
+    <div class="footer-about">
+      <div class="footer-brand">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAD4ElEQVR42u3doY4UQRCH8VMk5CAEBwKFQqDQhPdB8ho4XoAnwGFIeAE0BoPCnCQIDIEhSzLJsNnd6Z7prq6q/zdJ28tlv19X32z2Zq+uuLhUr1u3707z4tUQjX99/yEIlOPPCwTC8UFAfBAQHwTEB4Fe/HtvP/5bIBCM/+TZ8+nFtx8gUI0/LxAIxweBePwHj5+CQDn+vEAgHB8ExAcB8UFAfBAQHwTEBwHxxyGYvr8Hkaf4TALimyCYd/7Pzy8nJoFR/OWngpkEgjv/8HMPAWsAWE0CLoP4SwCeEHAZxp8XCITjg0A4/jIcCAR3/jEAEAjFf/Tp63TzZwKBavwlABAIxv/wa/oPAAjE4p8CAAKh+OcAgCBx/FIAIEj2Js+p+LUAQJAs/hoAECSPXwIABInjlwIAQeD4rQCAwFn85Qc6tsavBXAJAZ8xHBC/5navFYBWt4epEUSJvxUACBzGL/2jrxcAEDiJbwUABAni7wUAguDxWwCQRxA5fisAsgi8xPcAQA5BhvitAcggGBm/1ei3BJAKQab4PQCkRpAtfi8AKRF4ih8BQCoEWeP3BpACQeb4FgBCI8ge3wpASAQWz+SpiX+8vvyeXK29CFw9s8jqgUy1E6BmXb96XbQOE+DOm3dFy9ME6IbA+mlctQhKw/YAsBVKr/jNEYx6FNtIBK0BWMdvhmD0c/hqjwKPACzO/S4IPDyEcdQU6AnAavfvRlDyvXo9449E0AqAh/hbEKxOgOUvPxpBdACW8ed1DkDVMTACgdUUaAFg5Ll/KX711+J6QWB5FOwF4GX0744fCUE0AGHie0TQewrsAeBh9DeP7wlBzVEwGsDIW77m8aMgaDEFtgIYPfq7x1dBsAWATHxvCHocBXsBWJ/75vG9IOg1BWoBjNz9w+JHQ2AFQCp+VgRbPxAiGd8TAq8A0sf3gKDlFCgFMGL3u42fCUEJAOI7RrB2a9gSgNUtX5j4oxG0mAJrAKx3f7j4ERC0AED8pAguASB+MARbjoJzACxv+dLEH4lg6xRYA9B796eLHw3BKQDET4igBQDiB0JQOgWOAVic+zLxRyGoOQqWACxGv1x8bwi2ACB+YARrU2AG0Hv0y8cfgWDtKDgG0Gv0E98hgl7fHk78YAhmAMQXQHBqxPc694nvDMHafxn1eHAT8QMiIL4wAuILIWh97hM/EIJTU2DP7id+cATEF0dAfN4nID4IiA8C4oOA+CAgPgiIDwLig4D4wgiIL4yA+MIIiC+MgPjCCIgviuDUIr4wAuILIyC+MALiiyMgvjgC4gsjID4IiA8C4ksjIL4oguXiVeGSu/4C1zNmiXjsI/4AAAAASUVORK5CYII=" alt="Diamond Rush 1v1 logo" width="39" height="39">
+        <div><strong>DIAMOND RUSH 1v1</strong><small>MINECRAFT FABRIC MINIGAME</small></div>
+      </div>
+      <p class="footer-blurb">A server-authoritative Minecraft 1v1 minigame built around three diamond challenges. Developed by Al Shahriar Sowan at Eagox Studio.</p>
+      <span class="footer-version"><span class="dot"></span> V4 &middot; Minecraft 26.2</span>
+    </div>
+    <div class="footer-col"><h3>Explore</h3><a href="#features">Features</a><a href="#how">How to Play</a><a href="#install">Installation</a><a href="#download">Download V4</a></div>
+    <div class="footer-col"><h3>Project</h3><a data-gh href="https://github.com/Alshahriar-07/diamond-rush-minecraft-mod" target="_blank" rel="noopener noreferrer">GitHub</a><a data-modrinth href="https://modrinth.com/mod/diamondrush1v1" target="_blank" rel="noopener noreferrer">Modrinth</a><a data-dl href="https://github.com/Alshahriar-07/diamond-rush-minecraft-mod/releases/download/v4/Diamond-Rush-1v1-v4.jar" target="_blank" rel="noopener noreferrer">Official V4 JAR</a></div>
+    <div class="footer-col"><h3>Connect</h3><a href="https://alshahriarsayon.vercel.app/" target="_blank" rel="noopener noreferrer">Developer portfolio</a><a href="https://eagoxstudio.vercel.app/" target="_blank" rel="noopener noreferrer">Eagox Studio</a></div>
+  </div>
+  <div class="wrap footer-bottom"><span>&copy; 2026 Diamond Rush 1v1. All rights reserved.</span><span>Developed by <a href="https://alshahriarsayon.vercel.app/" target="_blank" rel="noopener noreferrer">Al Shahriar Sowan</a> &middot; <a href="https://eagoxstudio.vercel.app/" target="_blank" rel="noopener noreferrer">Eagox Studio</a></span></div>
+</footer>
 
+<div id="toast" role="status" aria-live="polite"></div>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const DOWNLOAD='https://github.com/Alshahriar-07/diamond-rush-minecraft-mod/releases/download/v4/Diamond-Rush-1v1-v4.jar';
@@ -299,24 +1071,70 @@ $('#oreBtn').addEventListener('click',()=>{
   setTimeout(()=>{hits=0;drawOre();busy=false},450);
 });
 
-/* commands */
-const esc=s=>s.replace(/</g,'&lt;');
-const groups=[
- ['Menu recovery',[['/diamondrush on','Reopen the Diamond Rush menu. No OP permissions required.']]]
-];
-$('#cmds').innerHTML=groups.map(([t,l])=>`<h3>${t}</h3>`+l.map(([c,d])=>`<button class="cmd" data-c="${esc(c)}"><code>${esc(c)}</code><span>${d}</span><em>Copy</em></button>`).join('')).join('');
-let tt;
-function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),1600)}
-$('#cmds').addEventListener('click',async e=>{
-  const b=e.target.closest('.cmd');if(!b)return;const t=b.dataset.c.replace(/&lt;/g,'<');
-  try{await navigator.clipboard.writeText(t)}catch(_){const a=document.createElement('textarea');a.value=t;document.body.append(a);a.select();try{document.execCommand('copy')}catch(_){}a.remove()}
-  toast('Copied')
+/* responsive navigation */
+const navToggle=$('.nav-toggle'),siteMenu=$('#site-menu');
+function closeNav(){navToggle.setAttribute('aria-expanded','false');navToggle.setAttribute('aria-label','Open navigation');siteMenu.classList.remove('is-open');document.body.classList.remove('nav-open')}
+navToggle.addEventListener('click',()=>{
+  const open=navToggle.getAttribute('aria-expanded')!=='true';
+  navToggle.setAttribute('aria-expanded',String(open));
+  navToggle.setAttribute('aria-label',open?'Close navigation':'Open navigation');
+  siteMenu.classList.toggle('is-open',open);
+  document.body.classList.toggle('nav-open',open);
 });
+$$('#site-menu a').forEach(a=>a.addEventListener('click',closeNav));
+addEventListener('keydown',e=>{if(e.key==='Escape')closeNav()});
+addEventListener('resize',()=>{if(innerWidth>980)closeNav()});
+
+/* active section marker */
+const navLinks=$$('.nav-link[data-section]');
+const navSections=navLinks.map(a=>document.getElementById(a.dataset.section)).filter(Boolean);
+let navTicking=false;
+function syncNav(){
+  let current=navSections[0]?.id||'home';
+  const marker=scrollY+Math.min(innerHeight*.38,300);
+  for(const section of navSections){if(section.offsetTop<=marker)current=section.id}
+  navLinks.forEach(a=>a.classList.toggle('is-active',a.dataset.section===current));
+  navTicking=false;
+}
+addEventListener('scroll',()=>{if(!navTicking){requestAnimationFrame(syncNav);navTicking=true}},{passive:true});
+syncNav();
+
+/* block reveal */
+const revealItems=$$('.reveal');
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches&&'IntersectionObserver'in window){
+  const revealObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target)}})
+  },{threshold:.1,rootMargin:'0px 0px -35px'});
+  revealItems.forEach(item=>revealObserver.observe(item));
+}else{
+  revealItems.forEach(item=>item.classList.add('is-visible'));
+}
 
 /* install tabs */
-$$('.tab').forEach(b=>b.addEventListener('click',()=>{
-  $$('.tab').forEach(o=>o.setAttribute('aria-selected',o===b));
-  $('#srv').hidden=b.dataset.t!=='srv';$('#cli').hidden=b.dataset.t!=='cli';
+const installTabs=$$('.install-tab');
+function selectInstallTab(tab){
+  installTabs.forEach(t=>t.setAttribute('aria-selected',String(t===tab)));
+  $$('#srv,#cli').forEach(panel=>panel.hidden=panel.id!==tab.dataset.target);
+}
+installTabs.forEach(tab=>tab.addEventListener('click',()=>selectInstallTab(tab)));
+installTabs.forEach((tab,index)=>tab.addEventListener('keydown',e=>{
+  if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;
+  e.preventDefault();
+  const next=installTabs[(index+(e.key==='ArrowRight'?1:-1)+installTabs.length)%installTabs.length];
+  selectInstallTab(next);next.focus();
+}));
+
+/* copy the recovery command */
+let toastTimer;
+function showToast(message){
+  const toast=$('#toast');toast.textContent=message;toast.classList.add('on');
+  clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('on'),1600);
+}
+$$('[data-copy]').forEach(button=>button.addEventListener('click',async()=>{
+  const text=button.dataset.copy;
+  try{await navigator.clipboard.writeText(text)}
+  catch(_){const area=document.createElement('textarea');area.value=text;document.body.append(area);area.select();try{document.execCommand('copy')}catch(_){}area.remove()}
+  showToast('Command copied');
 }));
 </script>
 </body>
