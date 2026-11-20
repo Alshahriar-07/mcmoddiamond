@@ -1,0 +1,17 @@
+# Diamond Rush 1v1
+# A Minecraft Fabric 1v1 minigame mod
+
+# Developer
+Al Shahriar Sowan
+
+# Studio
+Eagox Studio
+
+# Official website
+https://diamondrush-mcmod.vercel.app/
+
+# GitHub repository
+https://github.com/Alshahriar-07/diamond-rush-minecraft-mod
+
+# Modrinth project
+https://modrinth.com/mod/diamondrush1v1
